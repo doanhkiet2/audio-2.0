@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+.env
+
+# VSCode
+.vscode/
+
+# Dataset
+data/raw/
+data/processed/
+downloads/
+
+# Output
+output/
+dataset_final/
+logs/
+
+# Audio
+*.wav
+*.mp3
+*.flac
+
+# Training
+checkpoints/
+models/
+runs/
+
+# Linux
+.DS_Store
+Thumbs.db

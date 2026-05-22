@@ -1,0 +1,11 @@
+[
+  {
+    "start": 253.68,
+    "end": 256.72,
+    "score": 97.3,
+    "chars_per_sec": 19.41,
+    "whisper_text": "Chị dọng, chị đừng chỉ nguyên không như vậy, thử món này đi.",
+    "matched_text": "\"chị dâu, chị đừng chỉ ngồi không như vậy, thử món này đi.\"",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

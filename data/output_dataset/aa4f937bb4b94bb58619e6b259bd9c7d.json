@@ -1,0 +1,11 @@
+[
+  {
+    "start": 279.48,
+    "end": 285.44,
+    "score": 91.0,
+    "chars_per_sec": 21.31,
+    "whisper_text": "Dùi anh đánh vàng ẩm áp, anh mắt cô ta trở nên xô lắng, hoáy môi khế không thành một nụ cười nhẹ nhàng Ấn ý, mọi người nhìn xem.",
+    "matched_text": "dưới ánh đèn vàng ấm áp, ánh mắt cô ta trở nên sâu lắng, khóe môi khẽ cong thành một nụ cười nhẹ nhàng ẩn ý. mọi người nhìn xem",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

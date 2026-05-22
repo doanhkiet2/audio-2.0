@@ -1,0 +1,11 @@
+[
+  {
+    "start": 314.64,
+    "end": 318.4,
+    "score": 96.2,
+    "chars_per_sec": 22.61,
+    "whisper_text": "Tôi đặt đối xuống, lấy khăn ớt bên cạnh, thông thả lâu từ ngon tay một cách tìm ý,",
+    "matched_text": "tôi đặt đũa xuống, lấy khăn ướt bên cạnh, thong thả lau từng ngón tay một cách tỉ mỉ.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

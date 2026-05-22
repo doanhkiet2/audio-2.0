@@ -1,0 +1,11 @@
+[
+  {
+    "start": 110.48,
+    "end": 114.24,
+    "score": 102.2,
+    "chars_per_sec": 20.74,
+    "whisper_text": "Anh ấy nói mua tôn hủng ốc, nhất định bảo hai mẹ con tôi qua nếm thử cho biết.",
+    "matched_text": "anh ấy nói mua tôm hùng úc, nhất định bảo hai mẹ con tôi qua nếm thử cho biết.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "start": 185.84,
+    "end": 188.48,
+    "score": 98.2,
+    "chars_per_sec": 19.7,
+    "whisper_text": "Ba tạng đã nói tôi nay có tôn hùng đặc biệt cho con mà.",
+    "matched_text": "ba tạ đã nói tối nay có tôm hùm đặc biệt cho con mà.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

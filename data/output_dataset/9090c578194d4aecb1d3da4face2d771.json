@@ -1,0 +1,11 @@
+[
+  {
+    "start": 373.08,
+    "end": 377.88,
+    "score": 99.2,
+    "chars_per_sec": 21.46,
+    "whisper_text": "Tạm bên viễn thức đến biển xác, giữa tay chỉ thẳng vào tôi, chỉ vì một câu nói đùa mà em làm đến mức này.",
+    "matched_text": "tạ minh viễn tức đến biến sắc, giơ tay chỉ thẳng vào tôi, chỉ vì một câu nói đùa mà em làm đến mức này.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

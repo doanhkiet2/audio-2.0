@@ -1,0 +1,11 @@
+[
+  {
+    "start": 118.96,
+    "end": 125.32,
+    "score": 98.9,
+    "chars_per_sec": 21.54,
+    "whisper_text": "Tạ Minh viễn vừa thay dày, vừa dùng anh mắt dài hiệu với tôi, em xem nhà thang nhé bị cúc nước rồi, ban quan ly nói phải sở đến ngày mai.",
+    "matched_text": "tạ minh viễn vừa thay giày vừa dùng ánh mắt ra hiệu với tôi. em xem nhà thanh nhi bị cúp nước rồi. ban quản lý nói phải sửa đến ngày mai.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

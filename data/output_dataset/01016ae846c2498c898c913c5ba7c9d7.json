@@ -1,0 +1,11 @@
+[
+  {
+    "start": 32.24,
+    "end": 37.14,
+    "score": 102.0,
+    "chars_per_sec": 24.29,
+    "whisper_text": "Cho đến khi người chồng được coi là mẫu một của tôi dẫn theo cô hàng xóm hứa thang nhi và con chai cô ta về nhà ăn cơm.",
+    "matched_text": "cho đến khi người chồng được coi là mẫu mực của tôi dẫn theo cô hàng xóm hứa thanh nhi và con trai cô ta về nhà ăn cơm.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

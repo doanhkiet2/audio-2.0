@@ -1,0 +1,11 @@
+[
+  {
+    "start": 22.68,
+    "end": 26.36,
+    "score": 100.7,
+    "chars_per_sec": 21.47,
+    "whisper_text": "Bạn chai cứu từng thể thốt, không có em bên cạnh, anh sẽ không thể thở được mất.",
+    "matched_text": "bạn trai cũ từng thề thốt, không có em bên cạnh, anh sẽ không thể thở được mất.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

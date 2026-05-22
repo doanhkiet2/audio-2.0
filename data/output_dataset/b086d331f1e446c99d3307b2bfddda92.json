@@ -1,0 +1,11 @@
+[
+  {
+    "start": 304.92,
+    "end": 308.56,
+    "score": 88.7,
+    "chars_per_sec": 20.33,
+    "whisper_text": "Tây tạm bên viễn cầm điễn khẽ dùn, vài giọt nước xuất bánh lây phan trải bàn.",
+    "matched_text": "tay tạ minh viễn cầm đĩa khẽ run, vài giọt nước sốt bắn lên khăn trải bàn.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

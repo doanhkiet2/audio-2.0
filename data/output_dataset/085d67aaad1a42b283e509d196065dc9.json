@@ -1,0 +1,11 @@
+[
+  {
+    "start": 352.24,
+    "end": 355.56,
+    "score": 100.0,
+    "chars_per_sec": 21.08,
+    "whisper_text": "tội kết hôn 2 lần khu chỉ là vấn đề đạo đức, mà còn là tội hình sự.",
+    "matched_text": "tội kết hôn hai lần không chỉ là vấn đề đạo đức mà còn là tội hình sự.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

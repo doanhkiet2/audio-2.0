@@ -1,0 +1,11 @@
+[
+  {
+    "start": 270.64,
+    "end": 272.48,
+    "score": 100.1,
+    "chars_per_sec": 21.74,
+    "whisper_text": "Chị dọ lấy được anh ấy đúng là có phút.",
+    "matched_text": "chị dâu lấy được anh ấy đúng là có phúc.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

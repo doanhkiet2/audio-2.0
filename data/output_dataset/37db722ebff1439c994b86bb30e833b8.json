@@ -1,0 +1,11 @@
+[
+  {
+    "start": 272.48,
+    "end": 274.88,
+    "score": 87.1,
+    "chars_per_sec": 27.08,
+    "whisper_text": "Nhìn gương mặt tôi lạnh tăng không gió động chức mấy cho hề này.",
+    "matched_text": "nhìn gương mặt tôi lạnh tanh không dao động trước mấy trò hề này,",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

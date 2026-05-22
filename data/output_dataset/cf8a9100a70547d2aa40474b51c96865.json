@@ -1,0 +1,11 @@
+[
+  {
+    "start": 225.76,
+    "end": 228.0,
+    "score": 101.4,
+    "chars_per_sec": 21.43,
+    "whisper_text": "Nếu đó là quyết định của chúng nhà, tôi tôn trọng.",
+    "matched_text": "nếu đó là quyết định của chủ nhà, tôi tôn trọng.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

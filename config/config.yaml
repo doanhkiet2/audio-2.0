@@ -1,0 +1,21 @@
+project:
+  name: audio_dataset_factory_v1
+
+paths:
+  input_dir: data/input_audio
+  align_dir: data/alignment_output
+  output_dir: data/output_dataset
+  log_dir: data/logs
+
+runtime:
+  skip_done_files: true
+  write_mode: json
+  flush_every_n_files: 50
+
+
+validation:
+  min_score: 80
+  min_confidence: 0.0
+  min_alignment_score: 0.0
+
+

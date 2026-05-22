@@ -1,0 +1,11 @@
+[
+  {
+    "start": 256.72,
+    "end": 261.36,
+    "score": 95.4,
+    "chars_per_sec": 21.55,
+    "whisper_text": "Hứa thay nghi mình cười, gấp một miếng sửa khó vào bả tồi, chính là món tạm bên viễn vừa làm xong.",
+    "matched_text": "hứa thanh nhi mỉm cười, gấp một miếng sườn kho vào ba tôi, \"chính là món tạ minh viễn vừa làm xong.\"",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

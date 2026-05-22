@@ -1,0 +1,11 @@
+[
+  {
+    "start": 94.92,
+    "end": 101.44,
+    "score": 85.8,
+    "chars_per_sec": 23.31,
+    "whisper_text": "Trong tay dân dân còn ổ một quả bóng đầy bùn, anh mắt tò mò giảm trật vào trước đèn trùng thiên ngã chỉ ra sáo có số chèo ở hư tương sạng nhà tôi.",
+    "matched_text": "trong tay dương dương còn ôm một quả bóng đầy bổn, ánh mắt tò mò dán chặt vào chiếc đèn trùm thiên nga trị giá sáu con rối treo ở khu tiền sảnh nhà tôi.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

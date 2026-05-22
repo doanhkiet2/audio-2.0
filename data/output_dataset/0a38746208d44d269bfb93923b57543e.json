@@ -1,0 +1,11 @@
+[
+  {
+    "start": 327.76,
+    "end": 331.68,
+    "score": 98.8,
+    "chars_per_sec": 22.7,
+    "whisper_text": "nhanh khăn và thùng giác, rồi ngừng mắt nhìn hay người họ, anh nhìn bình tĩnh đến lạnh léo.",
+    "matched_text": "ném khăn vào thùng giác rồi ngẩng mắt nhìn hai người họ, ánh nhìn bình tĩnh đến lạnh lẽo.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

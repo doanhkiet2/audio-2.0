@@ -1,0 +1,11 @@
+[
+  {
+    "start": 114.24,
+    "end": 116.28,
+    "score": 103.1,
+    "chars_per_sec": 18.63,
+    "whisper_text": "Cái này, không làm phiên hai người chứ.",
+    "matched_text": "cái này không làm phiền hai người chứ.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

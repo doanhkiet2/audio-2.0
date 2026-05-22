@@ -1,0 +1,11 @@
+[
+  {
+    "start": 228.0,
+    "end": 231.76,
+    "score": 89.1,
+    "chars_per_sec": 17.29,
+    "whisper_text": "Dọng tôi biền thảnh, không gần sống, nhưng phiên gia thảm là 6800,",
+    "matched_text": "giọng tôi bình thản, không gợn sóng, nhưng phí giật thảm là 6800,",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

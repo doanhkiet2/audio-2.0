@@ -1,0 +1,11 @@
+[
+  {
+    "start": 80.36,
+    "end": 88.76,
+    "score": 100.4,
+    "chars_per_sec": 20.6,
+    "whisper_text": "Vãn vã, mâu ra xem ai đến này, trong giọng nói của tạm minh viễn thoáng lộ sự phân khích không tự nhiên, xem lẫn chút gượng gạo khó trây dấu, tôi nưởng đầu, nhìn về phía cửa.",
+    "matched_text": "vãn vãn, mau ra xem ai đến này. trong giọng nói của tạ minh viễn thoáng lộ sự phấn khích không tự nhiên, xen lẫn chút gượng gạo khó che giấu. tôi ngẩng đầu nhìn về phía cửa.",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]

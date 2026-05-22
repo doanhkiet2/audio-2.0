@@ -1,0 +1,11 @@
+[
+  {
+    "start": 377.88,
+    "end": 381.08,
+    "score": 95.1,
+    "chars_per_sec": 19.69,
+    "whisper_text": "Còn bắt đi bệnh viện, em bảo thân y còn mặt mũi nào nhìn ai.",
+    "matched_text": "còn bắt đi bệnh viện, em bảo thanh nhi còn mặt mũi nào nhìn ai,",
+    "audio_path": "data/input_audio/04_06__00_00__Mq_c_AfzhT4.wav"
+  }
+]
