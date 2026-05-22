@@ -6,7 +6,7 @@ from tqdm import tqdm
 # CONFIG
 # =========================
 
-INPUT_AUDIO = "data/raw/audio/09_05__00_00__dQPAmIYJglA.wav"
+INPUT_AUDIO = "data/raw/audio/09_05__00_00__HfXCWVQIVF8.wav"
 OUTPUT_DIR = "data/input_audio/splited"
 
 CHUNK_MINUTES = 20
