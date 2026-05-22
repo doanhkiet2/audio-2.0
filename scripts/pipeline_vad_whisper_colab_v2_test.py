@@ -20,8 +20,8 @@ from faster_whisper import WhisperModel
 # =========================
 # CONFIG
 # =========================
-INPUT_DIR = Path("/content/audio_input")
-OUTPUT_DIR = Path("/content/output_json")
+INPUT_DIR = Path("/content/drive/MyDrive/audio_input")
+OUTPUT_DIR = Path("/content/drive/MyDrive/output_json")
 TMP_DIR = Path("/content/tmp_wav16k")
 
 MODEL_SIZE = "medium"
