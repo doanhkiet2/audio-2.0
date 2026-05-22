@@ -1,8 +1,8 @@
 import re
 from tqdm import tqdm
 
-INPUT_FILE = "data/youtube_raw.txt"
-OUTPUT_FILE = "data/youtube_clean.txt"
+INPUT_FILE = "data/transcripts/gabieude8.txt"
+OUTPUT_FILE = "data/transcripts/gabieude8_clean.txt"
 
 
 # =========================
@@ -40,10 +40,7 @@ def parse_line(line):
     # 1:06xyz
     # 01:02:03hello
     # =========================
-    match = re.match(
-        r"^(\d{1,2}:\d{2}(?::\d{2})?)(.*)$",
-        line
-    )
+    match = re.match(r"^(\d{1,2}:\d{2}(?::\d{2})?)(.*)$", line)
 
     if not match:
         return None
@@ -71,11 +68,7 @@ def parse_line(line):
             minutes = int(parts[1])
             seconds = int(parts[2])
 
-            total_seconds = (
-                hours * 3600
-                + minutes * 60
-                + seconds
-            )
+            total_seconds = hours * 3600 + minutes * 60 + seconds
 
         else:
             return None
@@ -89,29 +82,14 @@ def parse_line(line):
 
     # remove:
     # "44 giây"
-    text = re.sub(
-        r"^\d+\s*giây",
-        "",
-        text,
-        flags=re.IGNORECASE
-    )
+    text = re.sub(r"^\d+\s*giây", "", text, flags=re.IGNORECASE)
 
     # remove:
     # "1 phút, 6 giây"
-    text = re.sub(
-        r"^\d+\s*phút\s*,?\s*\d*\s*giây?",
-        "",
-        text,
-        flags=re.IGNORECASE
-    )
+    text = re.sub(r"^\d+\s*phút\s*,?\s*\d*\s*giây?", "", text, flags=re.IGNORECASE)
 
     # remove duplicated timestamp garbage
-    text = re.sub(
-        r"^\d+\s*phút",
-        "",
-        text,
-        flags=re.IGNORECASE
-    )
+    text = re.sub(r"^\d+\s*phút", "", text, flags=re.IGNORECASE)
 
     # cleanup spaces
     text = re.sub(r"\s+", " ", text).strip()
@@ -119,10 +97,7 @@ def parse_line(line):
     if not text:
         return None
 
-    return {
-        "time": format_time(total_seconds),
-        "text": text
-    }
+    return {"time": format_time(total_seconds), "text": text}
 
 
 # =========================
@@ -174,19 +149,13 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 
     for item in final_lines:
 
-        f.write(
-            f"{item['time']} {item['text']}\n"
-        )
+        f.write(f"{item['time']} {item['text']}\n")
 
 
 # =========================
 # SAVE REJECT
 # =========================
-with open(
-    "data/youtube_rejected.txt",
-    "w",
-    encoding="utf-8"
-) as f:
+with open("data/youtube_rejected.txt", "w", encoding="utf-8") as f:
 
     for line in rejected:
         f.write(line + "\n")

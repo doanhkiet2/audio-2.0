@@ -2,7 +2,7 @@ import yt_dlp
 from datetime import datetime
 import os
 
-youtube_link = "https://www.youtube.com/watch?v=Mq_c_AfzhT4"
+youtube_link = "https://www.youtube.com/watch?v=IuoozJ_9QyQ"
 output_folder = "./data/raw/audio"
 
 
