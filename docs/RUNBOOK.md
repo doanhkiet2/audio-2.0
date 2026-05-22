@@ -1,6 +1,8 @@
 scripts/yt_dl.py
-scripts/clean_youtube_transcript.py
+scripts/prepare_audio_chunks.py
+
 scripts/pipeline_vad_whisper_v2.py
+scripts/clean_youtube_transcript.py
 scripts/align_hybrid.py
 scripts/pre_factory_text_quality.py
 scripts/pipeline/run_factory.py

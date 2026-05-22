@@ -1,9 +1,13 @@
+import gc
 import json
+import time
 from pathlib import Path
 
-import whisper
+import torch
 import torchaudio
-from silero_vad import load_silero_vad, get_speech_timestamps
+import whisper
+from silero_vad import get_speech_timestamps, load_silero_vad
+from tqdm import tqdm
 
 # =========================
 # CONFIG
@@ -11,135 +15,202 @@ from silero_vad import load_silero_vad, get_speech_timestamps
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-AUDIO_FILE = (
-    BASE_DIR / "data" / "input_audio" / "splited" / "09_04__00_00__IuoozJ_9QyQ_1.wav"
-)
-OUTPUT_FILE = BASE_DIR / "output" / "09_04__00_00__IuoozJ_9QyQ_1.json"
+INPUT_DIR = BASE_DIR / "data" / "input_audio" / "splited"
+OUTPUT_DIR = BASE_DIR / "output" / "whisper_vad"
 
-BASE_DIR.joinpath("output").mkdir(exist_ok=True)
+WHISPER_MODEL_NAME = "base"
 
+SUPPORTED_EXTS = [".wav", ".mp3", ".m4a", ".flac"]
 
-# =========================
-# LOAD MODELS
-# =========================
+VAD_THRESHOLD = 0.5
+MIN_SEGMENT_DURATION = 1.0
+MAX_SEGMENT_DURATION = 20.0
 
-print("Loading models...")
+SLEEP_AFTER_EACH_FILE = 3
 
-vad_model = load_silero_vad()
-whisper_model = whisper.load_model("base")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # =========================
-# LOAD AUDIO FOR VAD
+# HELPERS
 # =========================
 
 
-def load_audio(path):
-    wav, sr = torchaudio.load(path)
+def cleanup_memory():
+    gc.collect()
+
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
+
+
+def load_audio_for_vad(path: Path):
+    wav, sr = torchaudio.load(str(path))
 
     if wav.shape[0] > 1:
         wav = wav.mean(dim=0, keepdim=True)
 
     if sr != 16000:
-        wav = torchaudio.transforms.Resample(sr, 16000)(wav)
+        resampler = torchaudio.transforms.Resample(sr, 16000)
+        wav = resampler(wav)
         sr = 16000
 
     return wav.squeeze(0), sr
 
 
-wav, sr = load_audio(AUDIO_FILE)
+def get_audio_files(input_dir: Path):
+    files = []
+
+    for ext in SUPPORTED_EXTS:
+        files.extend(input_dir.glob(f"*{ext}"))
+
+    return sorted(files)
 
 
-# =========================
-# VAD SEGMENTS
-# =========================
+def process_one_file(audio_file: Path, vad_model, whisper_model):
+    output_file = OUTPUT_DIR / f"{audio_file.stem}.json"
 
-print("Running VAD...")
+    if output_file.exists():
+        print(f"[SKIP] Already exists: {output_file.name}")
+        return
 
-speech = get_speech_timestamps(wav, vad_model, sampling_rate=sr, threshold=0.5)
-
-segments = []
-
-for t in speech:
-    start = t["start"] / sr
-    end = t["end"] / sr
-
-    duration = end - start
-
-    if 1.0 <= duration <= 20.0:
-        segments.append((start, end))
-
-
-print(f"VAD segments: {len(segments)}")
-
-
-# =========================
-# WHISPER (ONLY ONCE)
-# =========================
-
-print("Running Whisper (full audio)...")
-
-result = whisper_model.transcribe(str(AUDIO_FILE))
-whisper_segments = result["segments"]
-
-
-# =========================
-# ALIGN (STABLE + NO DRIFT)
-# =========================
-
-results = []
-used = set()
-for v_start, v_end in segments:
-
-    matched_indices = []
-
-    for i, w in enumerate(whisper_segments):
-
-        if i in used:
-            continue
-
-        w_start = w["start"]
-        w_end = w["end"]
-
-        # overlap check
-        overlap = max(0, min(v_end, w_end) - max(v_start, w_start))
-
-        if overlap > 0:
-            matched_indices.append(i)
-
-    if not matched_indices:
-        continue
+    print(f"\n[INFO] Processing: {audio_file.name}")
 
     # =========================
-    # FIX CORE BUG HERE
+    # LOAD AUDIO FOR VAD
     # =========================
 
-    start_time = min(whisper_segments[i]["start"] for i in matched_indices)
-    end_time = max(whisper_segments[i]["end"] for i in matched_indices)
+    wav, sr = load_audio_for_vad(audio_file)
 
-    text = " ".join(whisper_segments[i]["text"].strip() for i in matched_indices)
+    # =========================
+    # VAD
+    # =========================
 
-    # mark used
-    for i in matched_indices:
-        used.add(i)
-
-    # FILTER
-    if len(text.split()) < 2:
-        continue
-
-    results.append(
-        {"start": round(start_time, 2), "end": round(end_time, 2), "text": text}
+    print("[INFO] Running VAD...")
+    speech = get_speech_timestamps(
+        wav,
+        vad_model,
+        sampling_rate=sr,
+        threshold=VAD_THRESHOLD,
     )
 
+    vad_segments = []
 
-# =========================
-# SAVE OUTPUT
-# =========================
+    for t in speech:
+        start = t["start"] / sr
+        end = t["end"] / sr
+        duration = end - start
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(results, f, ensure_ascii=False, indent=2)
+        if MIN_SEGMENT_DURATION <= duration <= MAX_SEGMENT_DURATION:
+            vad_segments.append((start, end))
+
+    print(f"[INFO] VAD segments: {len(vad_segments)}")
+
+    # Giải phóng wav sau VAD
+    del wav
+    cleanup_memory()
+
+    # =========================
+    # WHISPER FULL AUDIO
+    # =========================
+
+    print("[INFO] Running Whisper...")
+    result = whisper_model.transcribe(str(audio_file))
+    whisper_segments = result.get("segments", [])
+
+    # =========================
+    # ALIGN VAD + WHISPER
+    # =========================
+
+    results = []
+    used = set()
+
+    for v_start, v_end in vad_segments:
+        matched_indices = []
+
+        for i, w in enumerate(whisper_segments):
+            if i in used:
+                continue
+
+            w_start = w["start"]
+            w_end = w["end"]
+
+            overlap = max(0, min(v_end, w_end) - max(v_start, w_start))
+
+            if overlap > 0:
+                matched_indices.append(i)
+
+        if not matched_indices:
+            continue
+
+        start_time = min(whisper_segments[i]["start"] for i in matched_indices)
+        end_time = max(whisper_segments[i]["end"] for i in matched_indices)
+        text = " ".join(
+            whisper_segments[i]["text"].strip() for i in matched_indices
+        ).strip()
+
+        for i in matched_indices:
+            used.add(i)
+
+        if len(text.split()) < 2:
+            continue
+
+        results.append(
+            {
+                "start": round(start_time, 2),
+                "end": round(end_time, 2),
+                "text": text,
+                "audio_path": str(audio_file.relative_to(BASE_DIR)),
+            }
+        )
+
+    # =========================
+    # SAVE
+    # =========================
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+
+    print(f"[DONE] Saved: {output_file}")
+    print(f"[DONE] Segments: {len(results)}")
+
+    del result
+    del whisper_segments
+    del vad_segments
+    del results
+    cleanup_memory()
+
+    if SLEEP_AFTER_EACH_FILE > 0:
+        print(f"[INFO] Cooling down {SLEEP_AFTER_EACH_FILE}s...")
+        time.sleep(SLEEP_AFTER_EACH_FILE)
 
 
-print("\nDONE")
-print(f"Saved: {OUTPUT_FILE}")
-print(f"Segments: {len(results)}")
+def main():
+    print("[INFO] Loading models...")
+    vad_model = load_silero_vad()
+    whisper_model = whisper.load_model(WHISPER_MODEL_NAME)
+
+    audio_files = get_audio_files(INPUT_DIR)
+
+    print(f"[INFO] Input dir: {INPUT_DIR}")
+    print(f"[INFO] Output dir: {OUTPUT_DIR}")
+    print(f"[INFO] Found audio files: {len(audio_files)}")
+
+    if not audio_files:
+        print("[ERROR] No audio files found.")
+        return
+
+    for audio_file in tqdm(audio_files, desc="Whisper VAD files"):
+        try:
+            process_one_file(audio_file, vad_model, whisper_model)
+        except Exception as e:
+            print(f"[ERROR] Failed: {audio_file.name}")
+            print(f"[ERROR] {e}")
+        finally:
+            cleanup_memory()
+
+    print("\n[DONE] All files processed")
+
+
+if __name__ == "__main__":
+    main()
