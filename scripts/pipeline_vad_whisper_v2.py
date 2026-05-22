@@ -1,3 +1,8 @@
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parents[1]
+sys.path.append(str(BASE_DIR))
 import gc
 import json
 import time
@@ -8,6 +13,7 @@ import torchaudio
 import whisper
 from silero_vad import get_speech_timestamps, load_silero_vad
 from tqdm import tqdm
+
 
 from src.config_loader import load_config
 
