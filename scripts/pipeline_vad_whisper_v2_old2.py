@@ -4,7 +4,8 @@ import time
 from pathlib import Path
 
 import torch
-import torchaudio
+from pydub import AudioSegment
+import numpy as np
 import whisper
 from silero_vad import get_speech_timestamps, load_silero_vad
 from tqdm import tqdm
@@ -44,18 +45,19 @@ def cleanup_memory():
         torch.cuda.ipc_collect()
 
 
-def load_audio_for_vad(path: Path):
-    wav, sr = torchaudio.load(str(path))
+def load_audio_for_vad(audio_path, device):
+    audio = AudioSegment.from_file(str(audio_path))
 
-    if wav.shape[0] > 1:
-        wav = wav.mean(dim=0, keepdim=True)
+    audio = audio.set_channels(1)
+    audio = audio.set_frame_rate(16000)
+    audio = audio.set_sample_width(2)
 
-    if sr != 16000:
-        resampler = torchaudio.transforms.Resample(sr, 16000)
-        wav = resampler(wav)
-        sr = 16000
+    samples = np.array(audio.get_array_of_samples()).astype(np.float32)
+    samples = samples / 32768.0
 
-    return wav.squeeze(0), sr
+    wav = torch.from_numpy(samples).to(device)
+
+    return wav, 16000
 
 
 def get_audio_files(input_dir: Path):
