@@ -1,0 +1,10 @@
+project_root: "."
+input_dir: "data/input_audio/splited"
+output_dir: "output/whisper_vad"
+log_file: "logs/whisper_vad_done.jsonl"
+
+whisper_model: "base"
+vad_threshold: 0.5
+min_segment_duration: 1.0
+max_segment_duration: 20.0
+sleep_after_each_file: 3

@@ -1,0 +1,10 @@
+project_root: "/content/drive/MyDrive/audio-2.0"
+input_dir: "/content/drive/MyDrive/audio-2.0/data/input_audio/splited"
+output_dir: "/content/drive/MyDrive/audio-2.0/output/whisper_vad"
+log_file: "/content/drive/MyDrive/audio-2.0/logs/whisper_vad_done.jsonl"
+
+whisper_model: "base"
+vad_threshold: 0.5
+min_segment_duration: 1.0
+max_segment_duration: 20.0
+sleep_after_each_file: 3

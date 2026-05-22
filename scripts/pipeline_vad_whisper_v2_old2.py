@@ -9,46 +9,39 @@ import whisper
 from silero_vad import get_speech_timestamps, load_silero_vad
 from tqdm import tqdm
 
-from src.config_loader import load_config
+# =========================
+# CONFIG
+# =========================
+
+BASE_DIR = Path(__file__).resolve().parents[1]
+
+INPUT_DIR = BASE_DIR / "data" / "input_audio" / "splited"
+OUTPUT_DIR = BASE_DIR / "output" / "whisper_vad"
+
+WHISPER_MODEL_NAME = "base"
 
 SUPPORTED_EXTS = [".wav", ".mp3", ".m4a", ".flac"]
+
+VAD_THRESHOLD = 0.5
+MIN_SEGMENT_DURATION = 1.0
+MAX_SEGMENT_DURATION = 20.0
+
+SLEEP_AFTER_EACH_FILE = 3
+
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+
+# =========================
+# HELPERS
+# =========================
 
 
 def cleanup_memory():
     gc.collect()
+
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
         torch.cuda.ipc_collect()
-
-
-def load_done_files(log_file: Path):
-    done = set()
-
-    if not log_file.exists():
-        return done
-
-    with open(log_file, "r", encoding="utf-8") as f:
-        for line in f:
-            try:
-                item = json.loads(line)
-                done.add(item["input"])
-            except Exception:
-                pass
-
-    return done
-
-
-def write_done_log(log_file: Path, input_path: Path, output_path: Path):
-    log_file.parent.mkdir(parents=True, exist_ok=True)
-
-    item = {
-        "input": str(input_path),
-        "output": str(output_path),
-        "done_at": time.strftime("%Y-%m-%d %H:%M:%S"),
-    }
-
-    with open(log_file, "a", encoding="utf-8") as f:
-        f.write(json.dumps(item, ensure_ascii=False) + "\n")
 
 
 def load_audio_for_vad(path: Path):
@@ -67,51 +60,67 @@ def load_audio_for_vad(path: Path):
 
 def get_audio_files(input_dir: Path):
     files = []
+
     for ext in SUPPORTED_EXTS:
         files.extend(input_dir.glob(f"*{ext}"))
+
     return sorted(files)
 
 
-def process_one_file(audio_file: Path, vad_model, whisper_model, cfg):
-    output_dir = cfg["output_dir"]
-    log_file = cfg["log_file"]
-
-    output_file = output_dir / f"{audio_file.stem}.json"
+def process_one_file(audio_file: Path, vad_model, whisper_model):
+    output_file = OUTPUT_DIR / f"{audio_file.stem}.json"
 
     if output_file.exists():
-        print(f"[SKIP] Output exists: {output_file.name}")
-        write_done_log(log_file, audio_file, output_file)
+        print(f"[SKIP] Already exists: {output_file.name}")
         return
 
     print(f"\n[INFO] Processing: {audio_file.name}")
 
+    # =========================
+    # LOAD AUDIO FOR VAD
+    # =========================
+
     wav, sr = load_audio_for_vad(audio_file)
+
+    # =========================
+    # VAD
+    # =========================
 
     print("[INFO] Running VAD...")
     speech = get_speech_timestamps(
         wav,
         vad_model,
         sampling_rate=sr,
-        threshold=cfg["vad_threshold"],
+        threshold=VAD_THRESHOLD,
     )
 
     vad_segments = []
+
     for t in speech:
         start = t["start"] / sr
         end = t["end"] / sr
         duration = end - start
 
-        if cfg["min_segment_duration"] <= duration <= cfg["max_segment_duration"]:
+        if MIN_SEGMENT_DURATION <= duration <= MAX_SEGMENT_DURATION:
             vad_segments.append((start, end))
 
     print(f"[INFO] VAD segments: {len(vad_segments)}")
 
+    # Giải phóng wav sau VAD
     del wav
     cleanup_memory()
+
+    # =========================
+    # WHISPER FULL AUDIO
+    # =========================
 
     print("[INFO] Running Whisper...")
     result = whisper_model.transcribe(str(audio_file))
     whisper_segments = result.get("segments", [])
+
+    # =========================
+    # ALIGN VAD + WHISPER
+    # =========================
 
     results = []
     used = set()
@@ -136,7 +145,6 @@ def process_one_file(audio_file: Path, vad_model, whisper_model, cfg):
 
         start_time = min(whisper_segments[i]["start"] for i in matched_indices)
         end_time = max(whisper_segments[i]["end"] for i in matched_indices)
-
         text = " ".join(
             whisper_segments[i]["text"].strip() for i in matched_indices
         ).strip()
@@ -152,16 +160,16 @@ def process_one_file(audio_file: Path, vad_model, whisper_model, cfg):
                 "start": round(start_time, 2),
                 "end": round(end_time, 2),
                 "text": text,
-                "audio_path": str(audio_file),
+                "audio_path": str(audio_file.relative_to(BASE_DIR)),
             }
         )
 
-    output_dir.mkdir(parents=True, exist_ok=True)
+    # =========================
+    # SAVE
+    # =========================
 
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-
-    write_done_log(log_file, audio_file, output_file)
 
     print(f"[DONE] Saved: {output_file}")
     print(f"[DONE] Segments: {len(results)}")
@@ -170,51 +178,38 @@ def process_one_file(audio_file: Path, vad_model, whisper_model, cfg):
     del whisper_segments
     del vad_segments
     del results
-
     cleanup_memory()
 
-    if cfg["sleep_after_each_file"] > 0:
-        print(f"[INFO] Cooling down {cfg['sleep_after_each_file']}s...")
-        time.sleep(cfg["sleep_after_each_file"])
+    if SLEEP_AFTER_EACH_FILE > 0:
+        print(f"[INFO] Cooling down {SLEEP_AFTER_EACH_FILE}s...")
+        time.sleep(SLEEP_AFTER_EACH_FILE)
 
 
 def main():
-    cfg = load_config()
-
-    print(f"[INFO] APP_ENV: {__import__('os').getenv('APP_ENV', 'local')}")
-    print(f"[INFO] Input dir: {cfg['input_dir']}")
-    print(f"[INFO] Output dir: {cfg['output_dir']}")
-    print(f"[INFO] Log file: {cfg['log_file']}")
-
-    cfg["output_dir"].mkdir(parents=True, exist_ok=True)
-    cfg["log_file"].parent.mkdir(parents=True, exist_ok=True)
-
     print("[INFO] Loading models...")
     vad_model = load_silero_vad()
-    whisper_model = whisper.load_model(cfg["whisper_model"])
+    whisper_model = whisper.load_model(WHISPER_MODEL_NAME)
 
-    audio_files = get_audio_files(cfg["input_dir"])
-    done_files = load_done_files(cfg["log_file"])
+    audio_files = get_audio_files(INPUT_DIR)
 
-    audio_files = [p for p in audio_files if str(p) not in done_files]
-
-    print(f"[INFO] Remaining audio files: {len(audio_files)}")
+    print(f"[INFO] Input dir: {INPUT_DIR}")
+    print(f"[INFO] Output dir: {OUTPUT_DIR}")
+    print(f"[INFO] Found audio files: {len(audio_files)}")
 
     if not audio_files:
-        print("[DONE] Nothing to process.")
+        print("[ERROR] No audio files found.")
         return
 
     for audio_file in tqdm(audio_files, desc="Whisper VAD files"):
         try:
-            process_one_file(audio_file, vad_model, whisper_model, cfg)
+            process_one_file(audio_file, vad_model, whisper_model)
         except Exception as e:
             print(f"[ERROR] Failed: {audio_file.name}")
             print(f"[ERROR] {e}")
-            break
         finally:
             cleanup_memory()
 
-    print("\n[DONE] All possible files processed")
+    print("\n[DONE] All files processed")
 
 
 if __name__ == "__main__":
