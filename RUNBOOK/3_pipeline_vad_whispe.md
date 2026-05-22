@@ -1,1 +1,0 @@
-scripts/pipeline_vad_whisper_v2.py
