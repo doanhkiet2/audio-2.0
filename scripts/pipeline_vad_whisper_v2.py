@@ -11,8 +11,10 @@ from silero_vad import load_silero_vad, get_speech_timestamps
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-AUDIO_FILE = BASE_DIR / "data" / "raw" / "audio" / "09_04__00_00__IuoozJ_9QyQ.wav"
-OUTPUT_FILE = BASE_DIR / "output" / "09_04__00_00__IuoozJ_9QyQ.json"
+AUDIO_FILE = (
+    BASE_DIR / "data" / "input_audio" / "splited" / "09_04__00_00__IuoozJ_9QyQ_1.wav"
+)
+OUTPUT_FILE = BASE_DIR / "output" / "09_04__00_00__IuoozJ_9QyQ_1.json"
 
 BASE_DIR.joinpath("output").mkdir(exist_ok=True)
 
