@@ -6,7 +6,7 @@ from tqdm import tqdm
 # CONFIG
 # =========================
 
-INPUT_AUDIO = "data/raw/audio/09_05__00_00__HfXCWVQIVF8.wav"
+INPUT_DIR = "data/raw/audio/quyetdetam"
 OUTPUT_DIR = "data/input_audio/splited"
 
 CHUNK_MINUTES = 20
@@ -14,6 +14,8 @@ CHUNK_MINUTES = 20
 SAMPLE_RATE = 16000
 CHANNELS = 1
 AUDIO_CODEC = "pcm_s16le"
+
+AUDIO_EXTS = [".wav", ".mp3", ".m4a", ".flac", ".aac", ".ogg"]
 
 
 def run_cmd(cmd):
@@ -23,12 +25,9 @@ def run_cmd(cmd):
 def get_duration_seconds(input_path: Path) -> float:
     cmd = [
         "ffprobe",
-        "-v",
-        "error",
-        "-show_entries",
-        "format=duration",
-        "-of",
-        "default=nokey=1:noprint_wrappers=1",
+        "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=nokey=1:noprint_wrappers=1",
         str(input_path),
     ]
 
@@ -42,16 +41,7 @@ def get_duration_seconds(input_path: Path) -> float:
     return float(result.stdout.strip())
 
 
-def main():
-    input_path = Path(INPUT_AUDIO)
-    output_dir = Path(OUTPUT_DIR)
-
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    if not input_path.exists():
-        print(f"[ERROR] Input file not found: {input_path}")
-        return
-
+def split_one_file(input_path: Path, output_dir: Path):
     duration = get_duration_seconds(input_path)
     chunk_seconds = CHUNK_MINUTES * 60
 
@@ -61,13 +51,11 @@ def main():
 
     input_stem = input_path.stem
 
-    print(f"[INFO] Input: {input_path}")
-    print(f"[INFO] Output dir: {output_dir}")
+    print(f"\n[INFO] Input: {input_path}")
     print(f"[INFO] Duration: {duration / 60:.2f} minutes")
-    print(f"[INFO] Chunk size: {CHUNK_MINUTES} minutes")
     print(f"[INFO] Total chunks: {total_chunks}")
 
-    for i in tqdm(range(total_chunks), desc="Converting + splitting"):
+    for i in tqdm(range(total_chunks), desc=f"Splitting {input_stem}"):
         start = i * chunk_seconds
         output_file = output_dir / f"{input_stem}_{i + 1}.wav"
 
@@ -75,30 +63,55 @@ def main():
             "ffmpeg",
             "-y",
             "-hide_banner",
-            "-loglevel",
-            "error",
-            "-ss",
-            str(start),
-            "-i",
-            str(input_path),
-            "-t",
-            str(chunk_seconds),
-            "-ac",
-            str(CHANNELS),
-            "-ar",
-            str(SAMPLE_RATE),
-            "-c:a",
-            AUDIO_CODEC,
+            "-loglevel", "error",
+            "-ss", str(start),
+            "-i", str(input_path),
+            "-t", str(chunk_seconds),
+            "-ac", str(CHANNELS),
+            "-ar", str(SAMPLE_RATE),
+            "-c:a", AUDIO_CODEC,
             str(output_file),
         ]
 
         try:
             run_cmd(cmd)
         except subprocess.CalledProcessError as e:
-            print(f"[ERROR] Failed chunk {i + 1}: {e}")
+            print(f"[ERROR] Failed chunk {i + 1} of {input_path.name}: {e}")
             continue
 
-    print("[DONE] Audio prepared successfully")
+
+def main():
+    input_dir = Path(INPUT_DIR)
+    output_dir = Path(OUTPUT_DIR)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    if not input_dir.exists():
+        print(f"[ERROR] Input dir not found: {input_dir}")
+        return
+
+    audio_files = [
+        p for p in sorted(input_dir.iterdir())
+        if p.is_file() and p.suffix.lower() in AUDIO_EXTS
+    ]
+
+    if not audio_files:
+        print(f"[ERROR] No audio files found in: {input_dir}")
+        return
+
+    print(f"[INFO] Input dir: {input_dir}")
+    print(f"[INFO] Output dir: {output_dir}")
+    print(f"[INFO] Found audio files: {len(audio_files)}")
+    print(f"[INFO] Chunk size: {CHUNK_MINUTES} minutes")
+
+    for input_path in audio_files:
+        try:
+            split_one_file(input_path, output_dir)
+        except Exception as e:
+            print(f"[ERROR] Failed file {input_path.name}: {e}")
+            continue
+
+    print("\n[DONE] All audio prepared successfully")
 
 
 if __name__ == "__main__":

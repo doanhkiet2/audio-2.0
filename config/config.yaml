@@ -2,9 +2,9 @@ project:
   name: audio_dataset_factory_v1
 
 paths:
-  input_dir: data/input_audio
-  align_dir: data/alignment_output
-  output_dir: data/output_dataset
+  input_dir: data/input_audio/splitedtest
+  output_dir: data/input_audio/splitedtest
+  log_file: data/input_audio/splitedtest.jsonl
   log_dir: data/logs
 
 runtime:

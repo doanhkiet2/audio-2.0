@@ -16,8 +16,8 @@ from tqdm import tqdm
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-INPUT_DIR = BASE_DIR / "data" / "input_audio" / "splited"
-OUTPUT_DIR = BASE_DIR / "output" / "whisper_vad"
+INPUT_DIR = BASE_DIR / "data" / "input_audio" / "splitedtest"
+OUTPUT_DIR = BASE_DIR / "data" / "input_audio" / "splitedtest"
 
 WHISPER_MODEL_NAME = "base"
 
@@ -82,7 +82,7 @@ def process_one_file(audio_file: Path, vad_model, whisper_model):
     # LOAD AUDIO FOR VAD
     # =========================
 
-    wav, sr = load_audio_for_vad(audio_file)
+    wav, sr = load_audio_for_vad(audio_path, device)
 
     # =========================
     # VAD

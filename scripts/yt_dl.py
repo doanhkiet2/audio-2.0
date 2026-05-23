@@ -5,6 +5,32 @@ import os
 youtube_link = "https://www.youtube.com/watch?v=HfXCWVQIVF8"
 output_folder = "./data/raw/audio"
 
+youtube_link_ar = [
+    # "https://www.youtube.com/watch?v=-AgoLffPA98",
+    # "https://www.youtube.com/watch?v=C9MpEZ-BWNE",
+    # "https://www.youtube.com/watch?v=x6Kav8s5jSo",
+    # "https://www.youtube.com/watch?v=NBVlwn9rccU",
+    # "https://www.youtube.com/watch?v=hZYNwIcK64A",
+    # "https://www.youtube.com/watch?v=MofmySg0oGU",
+    # "https://www.youtube.com/watch?v=rDhMPGEgQu0",
+    # "https://www.youtube.com/watch?v=VGp7hMzI164",
+    # "https://www.youtube.com/watch?v=xw1L_RTxWqc",
+    # "https://www.youtube.com/watch?v=JBaRKyqy8hM",
+    # "https://www.youtube.com/watch?v=P_8vZprxMYg",
+    # "https://www.youtube.com/watch?v=B4Cm9HKApz4",
+
+    #"https://www.youtube.com/watch?v=3pT7rwFR0Fc",	
+    #"https://www.youtube.com/watch?v=bkW6L5L_c2Q",
+    #"https://www.youtube.com/watch?v=U7U1kItj5aE",
+    #"https://www.youtube.com/watch?v=GdPjwvlh0eU",
+    #"https://www.youtube.com/watch?v=6lRUgVGAbPw",
+    #"https://www.youtube.com/watch?v=qAud0zSa9u8",
+    #"https://www.youtube.com/watch?v=WDGqYOlbdHc",
+    #"https://www.youtube.com/watch?v=ymNJCO8RtWM",
+    #"https://www.youtube.com/watch?v=_4LGwlwO9mc",
+    #"https://www.youtube.com/watch?v=AFV-3nr2Ivs",
+]
+
 
 def make_filename(info):
     upload_date = info.get("upload_date")
@@ -46,4 +72,9 @@ def download_youtube_wav(url, output_dir="."):
         ydl.download([url])
 
 
-download_youtube_wav(youtube_link, output_folder)
+for i in youtube_link_ar:
+    try:
+        download_youtube_wav(i, output_folder)
+        print("DONE:", i)
+    except Exception as e:
+        print("ERROR:", i, e)
