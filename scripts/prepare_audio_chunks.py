@@ -6,8 +6,10 @@ from tqdm import tqdm
 # CONFIG
 # =========================
 
-INPUT_DIR = "data/raw/audio/quyetdetam"
+INPUT_DIR = "data/raw/audio/nuoiconchophu"
 OUTPUT_DIR = "data/input_audio/splited"
+
+SKIP_FILES = {}
 
 CHUNK_MINUTES = 20
 
@@ -25,9 +27,12 @@ def run_cmd(cmd):
 def get_duration_seconds(input_path: Path) -> float:
     cmd = [
         "ffprobe",
-        "-v", "error",
-        "-show_entries", "format=duration",
-        "-of", "default=nokey=1:noprint_wrappers=1",
+        "-v",
+        "error",
+        "-show_entries",
+        "format=duration",
+        "-of",
+        "default=nokey=1:noprint_wrappers=1",
         str(input_path),
     ]
 
@@ -63,13 +68,20 @@ def split_one_file(input_path: Path, output_dir: Path):
             "ffmpeg",
             "-y",
             "-hide_banner",
-            "-loglevel", "error",
-            "-ss", str(start),
-            "-i", str(input_path),
-            "-t", str(chunk_seconds),
-            "-ac", str(CHANNELS),
-            "-ar", str(SAMPLE_RATE),
-            "-c:a", AUDIO_CODEC,
+            "-loglevel",
+            "error",
+            "-ss",
+            str(start),
+            "-i",
+            str(input_path),
+            "-t",
+            str(chunk_seconds),
+            "-ac",
+            str(CHANNELS),
+            "-ar",
+            str(SAMPLE_RATE),
+            "-c:a",
+            AUDIO_CODEC,
             str(output_file),
         ]
 
@@ -91,7 +103,8 @@ def main():
         return
 
     audio_files = [
-        p for p in sorted(input_dir.iterdir())
+        p
+        for p in sorted(input_dir.iterdir())
         if p.is_file() and p.suffix.lower() in AUDIO_EXTS
     ]
 
@@ -105,6 +118,10 @@ def main():
     print(f"[INFO] Chunk size: {CHUNK_MINUTES} minutes")
 
     for input_path in audio_files:
+        if input_path.name in SKIP_FILES:
+            print(f"[SKIP] {input_path.name}")
+            continue
+
         try:
             split_one_file(input_path, output_dir)
         except Exception as e:
