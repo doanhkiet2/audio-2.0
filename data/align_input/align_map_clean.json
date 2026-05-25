@@ -1,0 +1,290 @@
+{
+    "version": 1,
+    "items": [
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt_clean.txt",
+            "whisper_prefix": "_IuoozJ_9QyQ",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt - Copy (2)_clean.txt",
+            "whisper_prefix": "_dQPAmIYJglA",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt - Copy (3)_clean.txt",
+            "whisper_prefix": "_HfXCWVQIVF8",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt - Copy (4)_clean.txt",
+            "whisper_prefix": "_-AgoLffPA98",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt - Copy (5)_clean.txt",
+            "whisper_prefix": "_C9MpEZ-BWNE",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt - Copy (6)_clean.txt",
+            "whisper_prefix": "_x6Kav8s5jSo",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hanhtrinhduongthe/htdt - Copy (7)_clean.txt",
+            "whisper_prefix": "_NBVlwn9rccU",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd_clean.txt",
+            "whisper_prefix": "_hZYNwIcK64A",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (2)_clean.txt",
+            "whisper_prefix": "_MofmySg0oGU",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (3)_clean.txt",
+            "whisper_prefix": "_rDhMPGEgQu0",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (4)_clean.txt",
+            "whisper_prefix": "_VGp7hMzI164",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (5)_clean.txt",
+            "whisper_prefix": "_xw1L_RTxWqc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (6)_clean.txt",
+            "whisper_prefix": "_JBaRKyqy8hM",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (7)_clean.txt",
+            "whisper_prefix": "_P_8vZprxMYg",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/gabieude/gbd - Copy (8)_clean.txt",
+            "whisper_prefix": "_B4Cm9HKApz4",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt_clean.txt",
+            "whisper_prefix": "_3pT7rwFR0Fc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (2)_clean.txt",
+            "whisper_prefix": "_bkW6L5L_c2Q",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (3)_clean.txt",
+            "whisper_prefix": "_U7U1kItj5aE",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (4)_clean.txt",
+            "whisper_prefix": "_GdPjwvlh0eU",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (5)_clean.txt",
+            "whisper_prefix": "_6lRUgVGAbPw",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (6)_clean.txt",
+            "whisper_prefix": "_qAud0zSa9u8",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (7)_clean.txt",
+            "whisper_prefix": "_WDGqYOlbdHc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (8)_clean.txt",
+            "whisper_prefix": "_ymNJCO8RtWM",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (9)_clean.txt",
+            "whisper_prefix": "__4LGwlwO9mc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/quyetdetam/qdt - Copy (10)_clean.txt",
+            "whisper_prefix": "_AFV-3nr2Ivs",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn_clean.txt",
+            "whisper_prefix": "_VKswn2BETWA",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (2)_clean.txt",
+            "whisper_prefix": "_oO0cFuWQjMU",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (3)_clean.txt",
+            "whisper_prefix": "_b1HQ3Z2YwPc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (4)_clean.txt",
+            "whisper_prefix": "_51Csh3gvFEo",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (5)_clean.txt",
+            "whisper_prefix": "_Ca9sd_g668E",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (6)_clean.txt",
+            "whisper_prefix": "_5FoIfME92AM",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (7)_clean.txt",
+            "whisper_prefix": "_Y9uriqGNMfw",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (8)_clean.txt",
+            "whisper_prefix": "_I1dNk_-1y8U",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (9)_clean.txt",
+            "whisper_prefix": "_xQuz9ZfVtrg",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (10)_clean.txt",
+            "whisper_prefix": "_8jqUg6bTwsY",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (11)_clean.txt",
+            "whisper_prefix": "_Y7nU4l0VQvQ",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (12)_clean.txt",
+            "whisper_prefix": "_6pMmFGPDB8s",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/hoacdainhan/hdn - Copy (13)_clean.txt",
+            "whisper_prefix": "_dZl4rIAZVlo",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp_clean.txt",
+            "whisper_prefix": "_4VWuiXuMwFs",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (2)_clean.txt",
+            "whisper_prefix": "_59tJ85fYwVI",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (3)_clean.txt",
+            "whisper_prefix": "_zrPNW_dRrB8",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (4)_clean.txt",
+            "whisper_prefix": "_eIgJaDVrhs4",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (5)_clean.txt",
+            "whisper_prefix": "_R1M3UIEViuc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (6)_clean.txt",
+            "whisper_prefix": "_wf6w0642tTk",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (7)_clean.txt",
+            "whisper_prefix": "_0Il1iZwc6OM",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (8)_clean.txt",
+            "whisper_prefix": "_sJPECoux9jE",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (9)_clean.txt",
+            "whisper_prefix": "_EmS8rLj9mQ8",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (10)_clean.txt",
+            "whisper_prefix": "_7CWlhYEQ2l4",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (11)_clean.txt",
+            "whisper_prefix": "_j8IOJHzUPmc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (12)_clean.txt",
+            "whisper_prefix": "_oeSSytdRm4s",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/nuoiconchophu/nccp - Copy (13)_clean.txt",
+            "whisper_prefix": "_LNUelJ3q4xA",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/chinhchiendebaovenang/ccdbvn_clean.txt",
+            "whisper_prefix": "__hckiNRQl-8",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/chinhchiendebaovenang/ccdbvn - Copy (2)_clean.txt",
+            "whisper_prefix": "_oXU7EAjFR4E",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/chinhchiendebaovenang/ccdbvn - Copy (3)_clean.txt",
+            "whisper_prefix": "__H2LpNO6Xmw",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/chinhchiendebaovenang/ccdbvn - Copy (4)_clean.txt",
+            "whisper_prefix": "_qe5qP6TuzJc",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/chinhchiendebaovenang/ccdbvn - Copy (5)_clean.txt",
+            "whisper_prefix": "_1luqUQkWKhQ",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        },
+        {
+            "source_youtube_path": "data/align_input/youtube_sub/chinhchiendebaovenang/ccdbvn - Copy (6)_clean.txt",
+            "whisper_prefix": "_KoUIUepi8Rk",
+            "whisper_folder_path": "data/align_input/whisper_sub"
+        }
+    ]
+}

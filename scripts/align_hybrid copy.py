@@ -9,7 +9,6 @@ from tqdm import tqdm
 # CONFIG
 # ==================================================
 SPLIT_DURATION_SECONDS = 20 * 60 + 0.015
-
 ALIGN_MAP_PATH = Path("data/align_input/align_map_clean.json")
 
 WHISPER_FOLDER = None
@@ -242,6 +241,8 @@ def load_youtube_segments(youtube_file):
 # ==================================================
 # MATCH
 # ==================================================
+
+
 def extract_best_substring(whisper_text, context, min_words=4):
     words = context.split()
 
@@ -251,18 +252,15 @@ def extract_best_substring(whisper_text, context, min_words=4):
     whisper_norm = normalize_text(whisper_text)
     whisper_words = word_count(whisper_norm)
 
-    min_len = max(min_words, int(whisper_words * 0.5))
-    max_len = max(min_words, int(whisper_words * 1.8))
-
     for start in range(len(words)):
-        for end in range(start + min_len, min(len(words), start + max_len) + 1):
+        for end in range(start + min_words, len(words) + 1):
             candidate = " ".join(words[start:end])
             candidate_norm = normalize_text(candidate)
 
-            candidate_words = word_count(candidate_norm)
-
-            if candidate_words == 0:
-                continue
+            base_score = fuzz.ratio(
+                whisper_norm,
+                candidate_norm,
+            )
 
             char_ratio = min(
                 len(candidate_norm),
@@ -272,6 +270,8 @@ def extract_best_substring(whisper_text, context, min_words=4):
                 len(whisper_norm),
             )
 
+            candidate_words = word_count(candidate_norm)
+
             word_ratio = min(
                 whisper_words,
                 candidate_words,
@@ -280,15 +280,10 @@ def extract_best_substring(whisper_text, context, min_words=4):
                 candidate_words,
             )
 
-            score = (
-                fuzz.ratio(whisper_norm, candidate_norm) * 0.55
-                + fuzz.token_set_ratio(whisper_norm, candidate_norm) * 0.25
-                + word_ratio * 100 * 0.15
-                + char_ratio * 100 * 0.05
-            )
+            score = base_score * 0.7 + char_ratio * 100 * 0.15 + word_ratio * 100 * 0.15
 
-            if candidate.strip().endswith((".", "!", "?", "。", "！", "？")):
-                score += 4
+            if candidate.strip().endswith((".", "!", "?", '"')):
+                score += 5
 
             if score > best_score:
                 best_score = score

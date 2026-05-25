@@ -2,8 +2,6 @@ import re
 
 # ==================================================
 # ASR FIX MAP
-# Chỉ dùng cho lỗi nghe sai / nhận diện sai.
-# Không dùng cho số -> chữ.
 # ==================================================
 
 VIET_FIX_MAP = {
@@ -12,6 +10,13 @@ VIET_FIX_MAP = {
     "vũ khống": "vu khống",
 }
 
+# ==================================================
+# REGEX
+# ==================================================
+
+BAD_ATTACHED_RE = re.compile(
+    r"(\d+[a-zA-ZÀ-ỹà-ỹ]+|[a-zA-ZÀ-ỹà-ỹ]+\d+|[%²㎡]+[a-zA-ZÀ-ỹà-ỹ]+|[a-zA-ZÀ-ỹà-ỹ]+[%²㎡]+)"
+)
 
 # ==================================================
 # NUMBER NORMALIZATION
@@ -119,11 +124,9 @@ def read_digits_one_by_one(text: str) -> str:
 
 
 def normalize_context_numbers(text: str) -> str:
-    # Case truyện/audio đặc biệt
     text = re.sub(r"\b2\s+ca\b", "song ca", text)
     text = re.sub(r"\b3\s+ca\b", "tam ca", text)
 
-    # Hotline / mã số hay đọc từng chữ số
     text = re.sub(
         r"\b120\b",
         lambda m: read_digits_one_by_one(m.group(0)),
@@ -138,8 +141,6 @@ def normalize_numbers(text: str) -> str:
 
     def replace_number(match):
         raw = match.group(0)
-
-        # Bỏ dấu phẩy/chấm trong số lớn kiểu 1,000 hoặc 1.000
         clean = raw.replace(",", "").replace(".", "")
 
         try:
@@ -149,9 +150,29 @@ def normalize_numbers(text: str) -> str:
 
         return number_to_vietnamese(n)
 
-    text = re.sub(r"\b\d[\d,.]*\b", replace_number, text)
+    return re.sub(r"\b\d[\d,.]*\b", replace_number, text)
+
+
+# ==================================================
+# SYMBOL NORMALIZATION
+# ==================================================
+
+
+def normalize_symbols(text: str) -> str:
+    text = text.replace("m²", " mét vuông ")
+    text = text.replace("㎡", " mét vuông ")
+    text = text.replace("%", " phần trăm ")
 
     return text
+
+
+# ==================================================
+# BAD TEXT CHECK
+# ==================================================
+
+
+def has_bad_attached_token(text: str) -> bool:
+    return BAD_ATTACHED_RE.search(text) is not None
 
 
 # ==================================================
@@ -165,14 +186,17 @@ def clean_text(text: str) -> str:
 
     text = text.lower().strip()
 
-    # Fix lỗi ASR trước
+    # Reject sớm nếu số/ký tự đặc biệt dính chữ:
+    # 17ảy, 30ười, m²ông, abc%
+    if has_bad_attached_token(text):
+        return ""
+
     for wrong, right in VIET_FIX_MAP.items():
         text = text.replace(wrong, right)
 
-    # Normalize số
+    text = normalize_symbols(text)
     text = normalize_numbers(text)
 
-    # Dọn khoảng trắng
     text = re.sub(r"\s+", " ", text).strip()
 
     return text

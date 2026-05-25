@@ -1,15 +1,30 @@
+import json
 import re
+from pathlib import Path
 from tqdm import tqdm
 
-INPUT_FILE = "data/transcripts/gabieude8.txt"
-OUTPUT_FILE = "data/transcripts/gabieude8_clean.txt"
+# =========================
+# CONFIG
+# =========================
 
+ALIGN_JSON_PATH = Path("data/align_input/align_map.json")
+
+INPUT_DIR = None
+OUTPUT_DIR = None
+
+# Nếu muốn chạy theo folder thì sửa thành:
+# INPUT_DIR = Path("data/transcripts")
+# OUTPUT_DIR = Path("data/transcripts_clean")
+
+REJECT_FILE = Path("data/youtube_rejected.txt")
+missing_files = []
 
 # =========================
 # FORMAT TIME
 # =========================
-def format_time(seconds):
 
+
+def format_time(seconds):
     h = seconds // 3600
     m = (seconds % 3600) // 60
     s = seconds % 60
@@ -20,26 +35,17 @@ def format_time(seconds):
 # =========================
 # PARSE LINE
 # =========================
-def parse_line(line):
 
+
+def parse_line(line):
     line = line.strip()
 
     if not line:
         return None
 
-    # remove invisible unicode chars
     line = line.replace("\ufeff", "")
-
-    # normalize weird spaces
     line = re.sub(r"\s+", " ", line)
 
-    # =========================
-    # MATCH TIMESTAMP
-    # supports:
-    # 0:04abc
-    # 1:06xyz
-    # 01:02:03hello
-    # =========================
     match = re.match(r"^(\d{1,2}:\d{2}(?::\d{2})?)(.*)$", line)
 
     if not match:
@@ -48,48 +54,90 @@ def parse_line(line):
     timestamp = match.group(1)
     text = match.group(2).strip()
 
-    # =========================
-    # CONVERT TIME
-    # =========================
     parts = timestamp.split(":")
 
     try:
-
         if len(parts) == 2:
-
             minutes = int(parts[0])
             seconds = int(parts[1])
-
             total_seconds = minutes * 60 + seconds
 
         elif len(parts) == 3:
-
             hours = int(parts[0])
             minutes = int(parts[1])
             seconds = int(parts[2])
-
             total_seconds = hours * 3600 + minutes * 60 + seconds
 
         else:
             return None
 
-    except:
+    except Exception:
         return None
 
-    # =========================
+        # =========================
+
     # REMOVE YOUTUBE GARBAGE
     # =========================
 
-    # remove:
-    # "44 giây"
-    text = re.sub(r"^\d+\s*giây", "", text, flags=re.IGNORECASE)
+    # Vietnamese:
+    # "3 giờ, 1 phút, 2 giây"
+    # "1 giờ, 1 giây"
+    # "3 giờ"
+    text = re.sub(
+        r"^\d+\s*giờ" r"(?:\s*,?\s*\d+\s*phút)?" r"(?:\s*,?\s*\d+\s*giây)?",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
 
-    # remove:
+    # Vietnamese:
     # "1 phút, 6 giây"
-    text = re.sub(r"^\d+\s*phút\s*,?\s*\d*\s*giây?", "", text, flags=re.IGNORECASE)
+    # "1 phút"
+    text = re.sub(
+        r"^\d+\s*phút" r"(?:\s*,?\s*\d+\s*giây)?",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
 
-    # remove duplicated timestamp garbage
-    text = re.sub(r"^\d+\s*phút", "", text, flags=re.IGNORECASE)
+    # Vietnamese:
+    # "44 giây"
+    text = re.sub(
+        r"^\d+\s*giây",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    # English:
+    # "3 hours, 1 minute, 2 seconds"
+    # "1 hour, 1 second"
+    # "3 hours"
+    text = re.sub(
+        r"^\d+\s*hours?" r"(?:\s*,?\s*\d+\s*minutes?)?" r"(?:\s*,?\s*\d+\s*seconds?)?",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    # English:
+    # "1 minute, 3 seconds"
+    # "1 minute"
+    text = re.sub(
+        r"^\d+\s*minutes?" r"(?:\s*,?\s*\d+\s*seconds?)?",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    # English:
+    # "3 seconds"
+    text = re.sub(
+        r"^\d+\s*seconds?",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
 
     # cleanup spaces
     text = re.sub(r"\s+", " ", text).strip()
@@ -97,80 +145,147 @@ def parse_line(line):
     if not text:
         return None
 
-    return {"time": format_time(total_seconds), "text": text}
+    return {
+        "time": format_time(total_seconds),
+        "text": text,
+    }
 
 
 # =========================
-# LOAD
+# CLEAN ONE FILE
 # =========================
-with open(INPUT_FILE, "r", encoding="utf-8") as f:
-    raw_lines = f.readlines()
-
-print(f"\nLoaded {len(raw_lines)} raw lines\n")
-
-# =========================
-# PROCESS
-# =========================
-cleaned = []
-rejected = []
-
-for line in tqdm(raw_lines):
-
-    parsed = parse_line(line)
-
-    if parsed:
-        cleaned.append(parsed)
-    else:
-        rejected.append(line.strip())
 
 
-# =========================
-# DEDUPLICATE
-# =========================
-final_lines = []
+def clean_one_file(input_file, output_file):
+    input_file = Path(input_file)
+    output_file = Path(output_file)
 
-seen = set()
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    REJECT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-for item in cleaned:
+    with open(input_file, "r", encoding="utf-8") as f:
+        raw_lines = f.readlines()
 
-    key = (item["time"], item["text"])
+    cleaned = []
+    rejected = []
 
-    if key not in seen:
+    for line in raw_lines:
+        parsed = parse_line(line)
 
-        seen.add(key)
+        if parsed:
+            cleaned.append(parsed)
+        else:
+            rejected.append(line.strip())
 
-        final_lines.append(item)
+    final_lines = []
+    seen = set()
 
+    for item in cleaned:
+        key = (item["time"], item["text"])
 
-# =========================
-# SAVE CLEAN
-# =========================
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        if key not in seen:
+            seen.add(key)
+            final_lines.append(item)
 
-    for item in final_lines:
+    with open(output_file, "w", encoding="utf-8") as f:
+        for item in final_lines:
+            f.write(f"{item['time']} {item['text']}\n")
 
-        f.write(f"{item['time']} {item['text']}\n")
+    with open(REJECT_FILE, "a", encoding="utf-8") as f:
+        for line in rejected:
+            f.write(f"{input_file} | {line}\n")
+
+    return len(final_lines), len(rejected)
 
 
 # =========================
-# SAVE REJECT
+# BUILD JOBS
 # =========================
-with open("data/youtube_rejected.txt", "w", encoding="utf-8") as f:
-
-    for line in rejected:
-        f.write(line + "\n")
 
 
+def build_jobs_from_folder(input_dir, output_dir):
+    jobs = []
+
+    input_dir = Path(input_dir)
+    output_dir = Path(output_dir)
+
+    for input_file in sorted(input_dir.glob("*.txt")):
+        output_file = output_dir / input_file.name
+
+        jobs.append(
+            {
+                "input_file": input_file,
+                "output_file": output_file,
+            }
+        )
+
+    return jobs
+
+
+def build_jobs_from_align_json(align_json_path):
+    with open(align_json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    jobs = []
+
+    for item in data["items"]:
+        input_file = Path(item["source_youtube_path"])
+
+        output_file = input_file.with_name(
+            input_file.stem + "_clean" + input_file.suffix
+        )
+
+        jobs.append(
+            {
+                "input_file": input_file,
+                "output_file": output_file,
+            }
+        )
+
+    return jobs
+
+
 # =========================
-# DONE
+# MAIN
 # =========================
+
+if REJECT_FILE.exists():
+    REJECT_FILE.unlink()
+
+if INPUT_DIR and OUTPUT_DIR:
+    jobs = build_jobs_from_folder(INPUT_DIR, OUTPUT_DIR)
+else:
+    jobs = build_jobs_from_align_json(ALIGN_JSON_PATH)
+
+print(f"\nTotal jobs: {len(jobs)}\n")
+
+total_cleaned = 0
+total_rejected = 0
+missing = 0
+
+for job in tqdm(jobs):
+    input_file = job["input_file"]
+    output_file = job["output_file"]
+
+    if not input_file.exists():
+        print(f"MISSING: {input_file}")
+        missing += 1
+        continue
+
+    cleaned_count, rejected_count = clean_one_file(
+        input_file=input_file,
+        output_file=output_file,
+    )
+
+    total_cleaned += cleaned_count
+    total_rejected += rejected_count
+
 print("\n======================")
-print(f"Cleaned : {len(final_lines)}")
-print(f"Rejected: {len(rejected)}")
+print(f"Jobs     : {len(jobs)}")
+print(f"Missing  : {missing}")
+print(f"Cleaned  : {total_cleaned}")
+print(f"Rejected : {total_rejected}")
 print("======================\n")
 
-print(f"Saved clean transcript:")
-print(OUTPUT_FILE)
-
-print(f"\nSaved rejected lines:")
-print("data/youtube_rejected.txt\n")
+print("Saved rejected lines:")
+print(REJECT_FILE)
