@@ -6,7 +6,7 @@ from tqdm import tqdm
 # CONFIG
 # =========================
 
-INPUT_DIR = "data/raw/audio/nuoiconchophu"
+INPUT_DIR = "data/raw/audio/chinhchiendebaovenang"
 OUTPUT_DIR = "data/input_audio/splited"
 
 SKIP_FILES = {}
