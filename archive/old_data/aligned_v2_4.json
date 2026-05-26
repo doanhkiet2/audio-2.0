@@ -1,0 +1,290 @@
+[
+  {
+    "start": 10.54,
+    "end": 15.38,
+    "score": 96.8,
+    "chars_per_sec": 21.9,
+    "whisper_text": "Khi còn nhỏ, thẳng em họ dành không được đồ chơi của tôi liền rõ dẫn, món này nếu tao không mang đi được.",
+    "matched_text": "Khi còn nhỏ, thằng em họ dành không được đồ chơi của tôi liền dọa dẫm. Món này nếu tao không mang đi được,"
+  },
+  {
+    "start": 22.68,
+    "end": 26.36,
+    "score": 100.7,
+    "chars_per_sec": 21.47,
+    "whisper_text": "Bạn chai cứu từng thể thốt, không có em bên cạnh, anh sẽ không thể thở được mất.",
+    "matched_text": "Bạn trai cũ từng thề thốt, không có em bên cạnh, anh sẽ không thể thở được mất."
+  },
+  {
+    "start": 32.24,
+    "end": 37.14,
+    "score": 102.0,
+    "chars_per_sec": 24.29,
+    "whisper_text": "Cho đến khi người chồng được coi là mẫu một của tôi dẫn theo cô hàng xóm hứa thang nhi và con chai cô ta về nhà ăn cơm.",
+    "matched_text": "Cho đến khi người chồng được coi là mẫu mực của tôi dẫn theo cô hàng xóm Hứa Thanh Nhi và con trai cô ta về nhà ăn cơm."
+  },
+  {
+    "start": 67.72,
+    "end": 74.2,
+    "score": 99.3,
+    "chars_per_sec": 19.44,
+    "whisper_text": "Ngày mai đi cùng tôi làm phố thuật trị sản, chúng ta đã nói só sẽ không có con, ai phá vỡ lời hứa để lúc phải trả giả dồi.",
+    "matched_text": "ngày mai đi cùng tôi làm phẫu thuật triệt sản. Chúng ta đã nói rõ sẽ không có con, ai phá vỡ lời hứa đến lúc phải trả giá rồi."
+  },
+  {
+    "start": 88.76,
+    "end": 94.92,
+    "score": 89.1,
+    "chars_per_sec": 22.89,
+    "whisper_text": "Tạm minh viễn sách hai tuổi đổ sư thi lẫn, hứa thân giới mặc trước phấy hoa đã giặt đến bạc mầu, tay rất theo cộm bé năm tùy tên dân dân.",
+    "matched_text": "Tạ Minh Viễn xách hai túi đồ siêu thị lớn. Hứa Thanh Nhi mặc chiếc váy hoa đã giặt đến bạc màu, tay dắt theo cậu bé năm tuổi tên Dương Dương."
+  },
+  {
+    "start": 94.92,
+    "end": 101.44,
+    "score": 85.8,
+    "chars_per_sec": 23.31,
+    "whisper_text": "Trong tay dân dân còn ổ một quả bóng đầy bùn, anh mắt tò mò giảm trật vào trước đèn trùng thiên ngã chỉ ra sáo có số chèo ở hư tương sạng nhà tôi.",
+    "matched_text": "Trong tay Dương Dương còn ôm một quả bóng đầy bổn, ánh mắt tò mò dán chặt vào chiếc đèn trùm thiên nga trị giá sáu con rối treo ở khu tiền sảnh nhà tôi."
+  },
+  {
+    "start": 110.48,
+    "end": 114.24,
+    "score": 102.2,
+    "chars_per_sec": 20.74,
+    "whisper_text": "Anh ấy nói mua tôn hủng ốc, nhất định bảo hai mẹ con tôi qua nếm thử cho biết.",
+    "matched_text": "Anh ấy nói mua tôm hùng Úc, nhất định bảo hai mẹ con tôi qua nếm thử cho biết."
+  },
+  {
+    "start": 125.32,
+    "end": 131.2,
+    "score": 101.5,
+    "chars_per_sec": 19.9,
+    "whisper_text": "Hai mẹ con của ấy, buồn người phụ nữ đơn thân nui con, đến bữa cơm cũng khó xoay sở nên anh mới bảo họ qua đây ăn tạm.",
+    "matched_text": "Hai mẹ con cô ấy, một người phụ nữ đơn thân nuôi con, đến bữa cơm cũng khó xoay sở nên anh mới bảo họ qua đây ăn tạm."
+  },
+  {
+    "start": 137.96,
+    "end": 141.24,
+    "score": 98.1,
+    "chars_per_sec": 22.56,
+    "whisper_text": "Nhưng tôi lước nhìn đồng hồ trên cổ tay, theo thông báo trong nhóm cư dân.",
+    "matched_text": "Nhưng tôi liếc nhìn đồng hồ trên cổ tay. Theo thông báo trong nhóm cư dân,"
+  },
+  {
+    "start": 167.68,
+    "end": 172.28,
+    "score": 98.3,
+    "chars_per_sec": 20.87,
+    "whisper_text": "Cô ta cuối đầu nhìn đứa trẻ, giọng bên bản đi, anh mình viễn, chắc là em nhớ nhằm thời gian rồi.",
+    "matched_text": "Cô ta cúi đầu nhìn đứa trẻ, giọng mềm hẳn đi. \"Anh Minh Viễn, chắc là em nhớ nhầm thời gian rồi."
+  },
+  {
+    "start": 175.36,
+    "end": 179.2,
+    "score": 100.9,
+    "chars_per_sec": 23.7,
+    "whisper_text": "Dân dân vừa nghe phải về liền bật lại phản đứng, hoàn toàn không hiểu sắc mặt người lớn.",
+    "matched_text": "Dương Dương vừa nghe phải về liền bật lại phản ứng, hoàn toàn không hiểu sắc mặt người lớn."
+  },
+  {
+    "start": 185.84,
+    "end": 188.48,
+    "score": 98.2,
+    "chars_per_sec": 19.7,
+    "whisper_text": "Ba tạng đã nói tôi nay có tôn hùng đặc biệt cho con mà.",
+    "matched_text": "Ba Tạ đã nói tối nay có tôm hùm đặc biệt cho con mà."
+  },
+  {
+    "start": 188.48,
+    "end": 192.76,
+    "score": 91.9,
+    "chars_per_sec": 22.43,
+    "whisper_text": "Tuyến gọi ba tạvà lên nó nớt mà gió giảm, khiến bầu không khí trong phòng hữu lại trong chút lát.",
+    "matched_text": "gọi ba Tạ vang lên non nớt mà rõ ràng, khiến bầu không khí trong phòng khựng lại trong chốc lát."
+  },
+  {
+    "start": 192.76,
+    "end": 195.84,
+    "score": 96.1,
+    "chars_per_sec": 21.1,
+    "whisper_text": "Sắp mặt tạm bên viễn lập tức biến đổi, bồi dối xin lẫn hoàng hốt.",
+    "matched_text": "Sắc mặt Tạ Minh Viễn lập tức biến đổi, bối rối xen lẫn hoảng hốt."
+  },
+  {
+    "start": 195.84,
+    "end": 200.8,
+    "score": 95.0,
+    "chars_per_sec": 19.35,
+    "whisper_text": "Anh ta vụ đưa tay kéo hứa thêm như lại, giọng cấp gáp, đi cái gì mà đi, đã đến rồi thì ở lại.",
+    "matched_text": "Anh ta vội đưa tay kéo Hứa Thanh Nhi lại, giọng gấp gáp, \"Đi cái gì mà đi? Đã đến rồi thì ở lại,"
+  },
+  {
+    "start": 200.8,
+    "end": 203.68,
+    "score": 100.4,
+    "chars_per_sec": 23.61,
+    "whisper_text": "Vãn phán chỉ là làm việc mệt nên nói chuyện thẳng thẳng một chút thôi.",
+    "matched_text": "vãn vãn chỉ là làm việc mệt nên nói chuyện thẳng thắn một chút thôi."
+  },
+  {
+    "start": 211.92,
+    "end": 216.56,
+    "score": 98.1,
+    "chars_per_sec": 22.2,
+    "whisper_text": "Thế như một mình nuôi con đã đủ vết phả rồi, em dù có gì ứng thì anh ít một chút cũng đâu anh hưởng gì.",
+    "matched_text": "Thanh Nhi một mình nuôi con đã đủ vất vả rồi, em dù có dị ứng thì ăn ít một chút cũng đâu ảnh hưởng gì."
+  },
+  {
+    "start": 219.64,
+    "end": 221.36,
+    "score": 96.9,
+    "chars_per_sec": 22.67,
+    "whisper_text": "Tôi nhìn đứa trẻ đang là lộn trên thảm.",
+    "matched_text": "Tôi nhìn đứa trẻ đang lăn lộn trên thảm"
+  },
+  {
+    "start": 221.36,
+    "end": 225.76,
+    "score": 94.4,
+    "chars_per_sec": 23.86,
+    "whisper_text": "Rồi truyền anh mắt ra gương mặt mang vẻ ra trường hiếm thế của tạm bên viễn, sau đó chẳng xãi đứng dậy.",
+    "matched_text": "rồi chuyển ánh mắt sang gương mặt mang vẻ ra trưởng hiếm thấy của Tạ Minh Viễn, sau đó chậm rãi đứng dậy."
+  },
+  {
+    "start": 225.76,
+    "end": 228.0,
+    "score": 101.4,
+    "chars_per_sec": 21.43,
+    "whisper_text": "Nếu đó là quyết định của chúng nhà, tôi tôn trọng.",
+    "matched_text": "Nếu đó là quyết định của chủ nhà, tôi tôn trọng."
+  },
+  {
+    "start": 228.0,
+    "end": 231.76,
+    "score": 89.1,
+    "chars_per_sec": 17.29,
+    "whisper_text": "Dọng tôi biền thảnh, không gần sống, nhưng phiên gia thảm là 6800,",
+    "matched_text": "Giọng tôi bình thản, không gợn sóng, nhưng phí giật thảm là 6800,"
+  },
+  {
+    "start": 231.76,
+    "end": 233.8,
+    "score": 100.3,
+    "chars_per_sec": 22.55,
+    "whisper_text": "lắt nữa tôi sẽ chừ vào tiền sinh hoạt của anh.",
+    "matched_text": "lát nữa tôi sẽ trừ vào tiền sinh hoạt của anh."
+  },
+  {
+    "start": 247.24,
+    "end": 253.68,
+    "score": 91.0,
+    "chars_per_sec": 24.53,
+    "whisper_text": "Tự nhiên mở tù hử chung lấy bát đúa, thậm chí còn trường xác lấy ra chứ có phải tay chương dùng của tạm bên viễn để giót cho dân dân một lý nước trải cây.",
+    "matched_text": "tự nhiên mở tủ khử trùng lấy bát đũa, thậm chí còn chuẩn xác lấy ra chiếc cốc vẽ tay chuyên dùng của Tạ Minh Viễn để rót cho Dương Dương một ly nước trái cây."
+  },
+  {
+    "start": 270.64,
+    "end": 272.48,
+    "score": 100.1,
+    "chars_per_sec": 21.74,
+    "whisper_text": "Chị dọ lấy được anh ấy đúng là có phút.",
+    "matched_text": "Chị dâu lấy được anh ấy đúng là có phúc."
+  },
+  {
+    "start": 272.48,
+    "end": 274.88,
+    "score": 87.1,
+    "chars_per_sec": 27.08,
+    "whisper_text": "Nhìn gương mặt tôi lạnh tăng không gió động chức mấy cho hề này.",
+    "matched_text": "Nhìn gương mặt tôi lạnh tanh không dao động trước mấy trò hề này,"
+  },
+  {
+    "start": 279.48,
+    "end": 285.44,
+    "score": 91.0,
+    "chars_per_sec": 21.31,
+    "whisper_text": "Dùi anh đánh vàng ẩm áp, anh mắt cô ta trở nên xô lắng, hoáy môi khế không thành một nụ cười nhẹ nhàng Ấn ý, mọi người nhìn xem.",
+    "matched_text": "Dưới ánh đèn vàng ấm áp, ánh mắt cô ta trở nên sâu lắng, khóe môi khẽ cong thành một nụ cười nhẹ nhàng ẩn ý. Mọi người nhìn xem"
+  },
+  {
+    "start": 304.92,
+    "end": 308.56,
+    "score": 88.7,
+    "chars_per_sec": 20.33,
+    "whisper_text": "Tây tạm bên viễn cầm điễn khẽ dùn, vài giọt nước xuất bánh lây phan trải bàn.",
+    "matched_text": "Tay Tạ Minh Viễn cầm đĩa khẽ run, vài giọt nước sốt bắn lên khăn trải bàn."
+  },
+  {
+    "start": 314.64,
+    "end": 318.4,
+    "score": 96.2,
+    "chars_per_sec": 22.61,
+    "whisper_text": "Tôi đặt đối xuống, lấy khăn ớt bên cạnh, thông thả lâu từ ngon tay một cách tìm ý,",
+    "matched_text": "Tôi đặt đũa xuống, lấy khăn ướt bên cạnh, thong thả lau từng ngón tay một cách tỉ mỉ."
+  },
+  {
+    "start": 348.4,
+    "end": 352.24,
+    "score": 96.6,
+    "chars_per_sec": 26.04,
+    "whisper_text": "để từ cách vợ hợp pháp, đồng thư phát sinh dưới do về quyền thư kế của phần của tập đoàn giang thị,",
+    "matched_text": "với tư cách vợ hợp pháp, đồng thời phát sinh rủi ro về quyền thừa kế cổ phần của tập đoàn Giang thị."
+  },
+  {
+    "start": 360.44,
+    "end": 365.2,
+    "score": 91.9,
+    "chars_per_sec": 23.95,
+    "whisper_text": "đồng thư kô ý gây trên giá quan hệ hoa nhân của chúng tôi, tôi sẽ hửi thư lực dư và truy kiểu chách nhiệm pháp lý.",
+    "matched_text": "đồng thời cố ý gây chia rẽ quan hệ hôn nhân của chúng tôi. Tôi sẽ gửi thư luật sư và truy cứu trách nhiệm pháp lý."
+  },
+  {
+    "start": 365.2,
+    "end": 369.88,
+    "score": 91.4,
+    "chars_per_sec": 21.15,
+    "whisper_text": "Tạm bên viễn đứng sướng tại chỗ, con tôn hùng trong tay dơi xuống sản, dương dương bị dọ dạc mình,",
+    "matched_text": "Tạ Minh Viễn đứng sững tại chỗ, con tôm hùng trong tay rơi xuống sàn. Dương Dương bị dọa giật mình,"
+  },
+  {
+    "start": 369.88,
+    "end": 373.08,
+    "score": 94.3,
+    "chars_per_sec": 16.88,
+    "whisper_text": "hả to biện rồi hoa lây khóc, hứa vãn, em đen rồi sao.",
+    "matched_text": "há to miệng rồi òa lên khóc. Hứa Vãn, em điên rồi sao?"
+  },
+  {
+    "start": 373.08,
+    "end": 377.88,
+    "score": 99.2,
+    "chars_per_sec": 21.46,
+    "whisper_text": "Tạm bên viễn thức đến biển xác, giữa tay chỉ thẳng vào tôi, chỉ vì một câu nói đùa mà em làm đến mức này.",
+    "matched_text": "Tạ Minh Viễn tức đến biến sắc, giơ tay chỉ thẳng vào tôi, chỉ vì một câu nói đùa mà em làm đến mức này."
+  },
+  {
+    "start": 377.88,
+    "end": 381.08,
+    "score": 95.1,
+    "chars_per_sec": 19.69,
+    "whisper_text": "Còn bắt đi bệnh viện, em bảo thân y còn mặt mũi nào nhìn ai.",
+    "matched_text": "Còn bắt đi bệnh viện, em bảo Thanh Nhi còn mặt mũi nào nhìn ai,"
+  },
+  {
+    "start": 381.08,
+    "end": 387.8,
+    "score": 93.1,
+    "chars_per_sec": 20.39,
+    "whisper_text": "Sau này anh còn sống thế nào trong khu này, hứa thân y cũng hỏa hốt, vừa ôm lấy dương dương, nước mắt chào ra, chỉ dâu, em sai rồi,",
+    "matched_text": "sau này anh còn sống thế nào trong khu này? Hứa Thanh Nhi cũng hoảng hốt, vội ôm lấy Dương Dương, nước mắt trào ra. \"Chị dâu, em sai rồi,"
+  },
+  {
+    "start": 392.56,
+    "end": 394.6,
+    "score": 105.0,
+    "chars_per_sec": 21.08,
+    "whisper_text": "Dương dương vẫn chỉ là một đứa trẻ thôi mà.",
+    "matched_text": "Dương Dương vẫn chỉ là một đứa trẻ thôi mà."
+  }
+]

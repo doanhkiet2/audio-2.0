@@ -1,0 +1,282 @@
+[
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 0.0,
+    "end": 5.44,
+    "score": 95.6,
+    "whisper_text": "Bạn đang ngay chuyện tại sai náo Audio, nơi ai kêu của bạn sẽ luôn được tôn trọng. Chúc các bạn ngay chuyện vui vẻ.",
+    "matched_text": "Bạn đang nghe truyện tại Sài Não Audio, nơi IQ của bạn sẽ luôn được tôn trọng. Chúc các bạn nghe truyện vui vẻ."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 26.36,
+    "end": 32.24,
+    "score": 62.3,
+    "whisper_text": "Sau này khi anh ta ngoại tình, tôi Ấn đầu anh ta xuống hổ bơi xuất 3 phút, giúp anh ta kiểm chứng dưới hạn xin lý của con người.",
+    "matched_text": "còn cẩn thận chỉ luôn vị trí của động mạch lớn nhất. Bạn trai cũ từng thề thốt, không có em bên cạnh, anh sẽ không thể thở được mất."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 37.14,
+    "end": 43.0,
+    "score": 93.0,
+    "whisper_text": "Chuyên bản ăn, hứa thang nhi gấp thức ăn cho đứa trẻ, rồi lại gấp cho chồng tôi, ngu cư dự dàng đầy vẻ mãn gửi, chỉ dâu.",
+    "matched_text": "cơm. Trên bàn ăn, Hứa Thanh Nhi gắp thức ăn cho đứa trẻ rồi lại gắp cho chồng tôi. Nụ cười dịu dàng đầy vẻ mãn nguyện."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 43.0,
+    "end": 48.92,
+    "score": 59.0,
+    "whisper_text": "Nhờ lúc em nhìn dương dương nhà em với anh minh viễn giống nhau quá, vừa rồi đi sự thiệu mọi người đều tưởng chúng em mới là một gia đình bà người.",
+    "matched_text": "xóm Hứa Thanh Nhi và con trai cô ta về nhà ăn cơm. Trên bàn ăn, Hứa Thanh Nhi gắp thức ăn cho đứa trẻ rồi lại gắp cho chồng tôi."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 48.92,
+    "end": 59.84,
+    "score": 98.0,
+    "whisper_text": "Ê, xem cái miệng em này, chỉ dâu đừng để bụng nhé, em chỉ là hơi vô tư thôi, tôi đặt đủ xuống, thân sắp biên thàn, lấy chi hoa xe ra, không để bụng, bây giờ đến biện, làm rất nhiệm quan hệ hết thống.",
+    "matched_text": "xem cái miệng em này. Chị dâu đừng để bụng nhé. Em chỉ là hơi vô tư thôi. Tôi đặt đũa xuống, thần sắc bình thản, lấy chìa khóa xe ra không để bụng. Bây giờ đến bệnh viện làm xét nghiệm quan hệ huyết thống."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 59.84,
+    "end": 67.72,
+    "score": 95.0,
+    "whisper_text": "Nếu là thật, tôi kiện tạm minh viễn tội kết hôn 2 lần, nếu là giả, tôi kiện cô tội vũ khống, con nữa, tạm minh viễn để tránh giới hiểu lầm như vậy làm lại.",
+    "matched_text": "Nếu là thật, tôi kiện Tạ Minh Viễn tội kết hôn hai lần. Nếu là giả, tôi kiện cô tội vu khống. Còn nữa, Tạ Minh Viễn, để tránh những hiểu lầm như vậy lặp lại,"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 74.36,
+    "end": 80.36,
+    "score": 47.0,
+    "whisper_text": "Khi tạm minh viễn dẫn hai mẹ con hứa thân giới về, tôi đang ngồi bên cửa sổ xa đất trong phòng khác, chăm chú xem bao cáo tài chính quy này.",
+    "matched_text": "Chúng ta đã nói rõ sẽ không có con, ai phá vỡ lời hứa đến lúc phải trả giá rồi."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 101.44,
+    "end": 110.48,
+    "score": 91.9,
+    "whisper_text": "Chỉ dấu ở nhà, hứa thân giới khá kỷ, có chút lung túng, hiện tay vấn lại lọn tóc bên tay, dọn vừa khách sáo vừa dạy dặt, tôi vừa dân dân vừa đi sư thi vệ, tình cơ gặp anh tạ.",
+    "matched_text": "dâu ở nhà à?\" Hứa Thanh Nhi khẽ cười, có chút lúng túng, tiện tay vén lại lọn tóc bên tai, giọng vừa khách sáo vừa dè dặt. Tôi với Dương Dương vừa đi siêu thị về, tình cờ gặp anh Tạ."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 116.28,
+    "end": 118.96,
+    "score": 98.0,
+    "whisper_text": "Tôi khép lép tốt, anh mắt dừng lại trên người tạ Minh viễn.",
+    "matched_text": "Tôi khép laptop, ánh mắt dừng lại trên người Tạ Minh Viễn."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 133.52,
+    "end": 137.96,
+    "score": 97.7,
+    "whisper_text": "Nếu là một người vợ bình thường, lúc này có lẽ sẽ vì giữa thiện cho trồng mà mấy cưỡng cửa cho qua.",
+    "matched_text": "Nếu là một người vợ bình thường, lúc này có lẽ sẽ vì giữa thể diện cho chồng mà miễn cưỡng cười cho qua."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 146.4,
+    "end": 157.76,
+    "score": 78.6,
+    "whisper_text": "Rộng khôngquest giá động, bài ra, tạ Minh viễn, tôi gì ứng với chi tiền trong nhà từ trước đến nay không ăn tôm hùng. Suo tôm anh mua, nếu là để đ大 khác, thì sử lĩ sạc ở khu bếp rau, đừng để chất là giữ xuất hiện trong phòng an.",
+    "matched_text": "cúp nước từ 9:00 sáng đến 11:00 trưa, hiện tại đã khôi phục được 7 tiếng rồi. Tôi bình tĩnh nói rõ, Số tôm anh mua nếu là để đãi khách thì xử lý sạch ở khu bếp sau. Đừng để chất gây dị ứng xuất hiện trong phòng ăn."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 157.76,
+    "end": 163.84,
+    "score": 89.4,
+    "whisper_text": "Chú thích chi tiền là thành phần triển tạo nên đổi cứng và gấu chú châu vọ tôn, không khí trong phòng chút lát cho nên ngọt nặng để.",
+    "matched_text": "Chú thích: Chi tin Tin là thành phần chính tạo nên độ cứng và cấu trúc cho vỏ tôm. Không khí trong phòng chốc lát trở nên gượng gạo nặng nề."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 163.84,
+    "end": 167.68,
+    "score": 81.1,
+    "whisper_text": "Lúc kuy tranh mà thưa thay nhé ở lại rồi những chiếm giống đổi sáng vệ ở đối đáng thơm.",
+    "matched_text": "cười trên mặt Hứa Thanh Nhi khượng lại rồi nhanh chóng đổi sang vẻ yếu đuối đáng thương."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 172.28,
+    "end": 175.36,
+    "score": 98.9,
+    "whisper_text": "Dân dân, hay là chúng ta về thôi, đừng làm cô không vui.",
+    "matched_text": "Dương Dương, hay là chúng ta về thôi, đừng làm cô không vui.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 179.2,
+    "end": 182.8,
+    "score": 91.2,
+    "whisper_text": "Nó lập tức nằm lan ra sản, lan lộn ngay trên tấm thảm bà tư thủ công đá tiền.",
+    "matched_text": "Nó lập tức nằm lăn ra sàn, lăn lộn ngay trên tấm thảm 34 thủ công đắt tiền,"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 182.8,
+    "end": 185.84,
+    "score": 97.7,
+    "whisper_text": "Vừa quý vừa là, con không đi, con muốn ăn tôn hùng.",
+    "matched_text": "vừa quẫy vừa la, \"Con không đi, con muốn ăn tôm hùm.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 203.68,
+    "end": 206.8,
+    "score": 57.7,
+    "whisper_text": "Anh là chúng nhà, chẳng đã anh ngay cả việc giữ khách cũng không có quyền sau.",
+    "matched_text": "đến rồi thì ở lại, vãn vãn chỉ là làm việc mệt nên nói chuyện thẳng thắn một"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 206.8,
+    "end": 211.84,
+    "score": 90.8,
+    "whisper_text": "Nói xong, anh ta quay xong tôi, trong giọng nói đã lộn dạy chết móc, vãn phán, em cũng thật là.",
+    "matched_text": "Nói xong, anh ta quay sang tôi, trong giọng nói đã lộ ra ý trách móc. \"Vãn Vãn, em cũng thật là,"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 216.56,
+    "end": 219.64,
+    "score": 100.9,
+    "whisper_text": "Nhất thiết cứu phải làm họ sự mọi người trước mặt đứa trẻ như vậy sao.",
+    "matched_text": "Nhất thiết cứ phải làm khó xử mọi người trước mặt đứa trẻ như vậy sao?\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 233.8,
+    "end": 237.24,
+    "score": 58.0,
+    "whisper_text": "Tạm bên viễn phận lại, môi mất máy, nhé, không nói ra được câu nào.",
+    "matched_text": "chủ nhà, tôi tôn trọng. Giọng tôi bình thản, không gợn sóng, nhưng"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 237.24,
+    "end": 240.84,
+    "score": 92.4,
+    "whisper_text": "Với công diễn ra trong một bộ không hí kỳ qua, nằm đi khiến người ta khó chịu.",
+    "matched_text": "cơm diễn ra trong một bầu không khí kỳ quặc, nặng nề khiến người ta khó chịu."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 240.84,
+    "end": 244.52,
+    "score": 62.5,
+    "whisper_text": "Tạm bên viễn đào tạp gì, đi gia đi vào trong biếp, động tác cực kỳ bệnh dụng.",
+    "matched_text": "anh. Tạ Minh Viễn khựng lại, môi mấp máy, nhất thời không nói ra được câu nào."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 244.52,
+    "end": 247.24,
+    "score": 59.1,
+    "whisper_text": "Con hứa thay nghi lại giống như đã quen thuộc với nơi này từ lâu.",
+    "matched_text": "Viễn đeo tạp rề đi ra đi vào trong bếp, động tác cực kỳ bận rộn."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 253.68,
+    "end": 256.72,
+    "score": 97.3,
+    "whisper_text": "Chị dọng, chị đừng chỉ nguyên không như vậy, thử món này đi.",
+    "matched_text": "\"Chị dâu, chị đừng chỉ ngồi không như vậy, thử món này đi.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 256.72,
+    "end": 261.36,
+    "score": 95.4,
+    "whisper_text": "Hứa thay nghi mình cười, gấp một miếng sửa khó vào bả tồi, chính là món tạm bên viễn vừa làm xong.",
+    "matched_text": "Hứa Thanh Nhi mỉm cười, gấp một miếng sườn kho vào ba tôi, \"Chính là món Tạ Minh Viễn vừa làm xong.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 261.36,
+    "end": 265.12,
+    "score": 99.8,
+    "whisper_text": "Dọng nói của cô ta mang theo sự thân mật tự nhiên, thế nào? Vừa vận chứa.",
+    "matched_text": "Giọng nói của cô ta mang theo sự thân mật tự nhiên. \"Thế nào? Vừa vặn chứ ạ.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 265.12,
+    "end": 270.64,
+    "score": 101.9,
+    "whisper_text": "Tây nghề của anh mình viễn thật sự rất tốt, sau này ai lấy được anh ấy, ah không, xem em này lại nói nhằm rồi.",
+    "matched_text": "Tay nghề của anh Minh Viễn thật sự rất tốt. Sau này ai lấy được anh ấy? À không, xem em này, lại nói nhầm rồi."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 274.88,
+    "end": 279.48,
+    "score": 59.5,
+    "whisper_text": "Cô ta lại gấp một miếng thịt đốt cho dân dân, rồi quay xa nghiên tạm bên viễn vừa bương điễ tôn gùng ra.",
+    "matched_text": "em này, lại nói nhầm rồi. Chị dâu lấy được anh ấy đúng là có phúc. Nhìn gương mặt tôi lạnh tanh không dao"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 291.08,
+    "end": 299.0,
+    "score": 95.6,
+    "whisper_text": "Cô ta trả miệng, bật cười khé, ấm thanh lạnh, anh mắt lứa qua dữ tôi và tạm bên viễn mang theo ý vị khó nói, ai không biết còn tử chúng ta mới là một gia đình ba người.",
+    "matched_text": "Cô ta che miệng bật cười khẽ, âm thanh lanh lành, ánh mắt lướt qua giữa tôi và Tạ Minh Viễn mang theo ý vị khó nói, \"Ai không biết còn tưởng chúng ta mới là một gia đình ba người.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 299.0,
+    "end": 304.92,
+    "score": 81.2,
+    "whisper_text": "Ê già, chị dâu, chị đừng để bụng nhé, tôi chỉ nói đùa thôi, thang bé cũng hay vô tư gọi anh ấy là ba tạm mà.",
+    "matched_text": "ý vị khó nói, \"Ai không biết còn tưởng chúng ta mới là một Thằng bé cũng hay vô tư gọi anh ấy là ba tạ mà.\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 308.56,
+    "end": 314.64,
+    "score": 95.5,
+    "whisper_text": "Anh ta theo phản xã nhìn tôi, cười vận gạo soa diệu, thang ý chỉ nói vua thôi, em xem em kia, sau lại nghiêm túc như vậy.",
+    "matched_text": "Anh ta theo phản xạ nhìn tôi, cười gượng gạo xoa dịu. Thanh Nhi chỉ nói vô vừa thôi, \"Em xem em kìa, sao lại nghiêm túc như vậy?\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 318.4,
+    "end": 323.04,
+    "score": 89.8,
+    "whisper_text": "đồng tóc trận giải khiến bầu không khí càng thêm căng thẳng, chậm đến mức mục đủ người trên mặt tạm bên viễn dần tắt hẳn,",
+    "matched_text": "mỉ. Động tác chậm rãi khiến bầu không khí càng thêm căng thẳng. Chậm đến mức nụ cười trên mặt Tạ Minh Viễn dần tắt hẳn,"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 335.32,
+    "end": 339.68,
+    "score": 95.1,
+    "whisper_text": "thông minh lý lo diết, tôi có đủ có giở nghi ngờ đây là một phép thử mang tính tham dọ dựa trên sự thật,",
+    "matched_text": "Theo nguyên lý logic, tôi có đủ cơ sở nghi ngờ đây là một phép thử mang tính thăm dò dựa trên sự thật."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 387.8,
+    "end": 392.56,
+    "score": 100.3,
+    "whisper_text": "em thật sự chỉ lỡ biện thôi, em với anh tạo trong sạch, chỉ sao có thể làm một người khác như vậy.",
+    "matched_text": "em thật sự chỉ lỡ miệng thôi. Em với anh tạo trong sạch, chị sao có thể làm nhục người khác như vậy?\""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 394.6,
+    "end": 399.4,
+    "score": 59.8,
+    "whisper_text": "Vừa khóc, cô ta vừa dùng anh mắt yêu ớt, bởi lực ấy nhìn về viễn thả minh viễn, như đang câu cửa.",
+    "matched_text": "trong sạch, chị sao có thể làm nhục người khác như vậy?\" Dương Dương vẫn chỉ là một đứa trẻ thôi mà."
+  }
+]

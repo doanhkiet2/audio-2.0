@@ -1,7 +1,7 @@
 project_root: "."
-input_dir: "data/input_audio/splited"
-output_dir: "output/whisper_vad"
-log_file: "logs/whisper_vad_done.jsonl"
+input_dir: "output/align_output/aligned"
+output_dir: "output/factory_output"
+log_file: "logs/factory_done.jsonl"
 
 whisper_model: "base"
 vad_threshold: 0.5

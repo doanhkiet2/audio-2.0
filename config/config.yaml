@@ -2,10 +2,11 @@ project:
   name: audio_dataset_factory_v1
 
 paths:
-  input_dir: data/input_audio/splitedtest
-  output_dir: data/input_audio/splitedtest
-  log_file: data/input_audio/splitedtest.jsonl
-  log_dir: data/logs
+  input_dir: "output/align_output/aligned"
+  output_dir: "output/factory_output"
+  log_file: "logs/factory_done.jsonl"
+  log_dir: "logs/"
+
 
 runtime:
   skip_done_files: true

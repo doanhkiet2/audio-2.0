@@ -1,0 +1,285 @@
+[
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 0.0,
+    "end": 5.44,
+    "whisper_text": "Bạn đang ngay chuyện tại sai náo Audio, nơi ai kêu của bạn sẽ luôn được tôn trọng. Chúc các bạn ngay chuyện vui vẻ.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 15.38,
+    "end": 22.68,
+    "whisper_text": "Tao chết cho mày xem, thế là tôi đưa cho nó con rau gọt chái cây, dùi dút nó gọi cấp kíu 120, còn cần thận chỉ luôn vị trí của động mệt lớ nhất.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 26.36,
+    "end": 32.24,
+    "whisper_text": "Sau này khi anh ta ngoại tình, tôi Ấn đầu anh ta xuống hổ bơi xuất 3 phút, giúp anh ta kiểm chứng dưới hạn xin lý của con người.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 37.14,
+    "end": 43.0,
+    "whisper_text": "Chuyên bản ăn, hứa thang nhi gấp thức ăn cho đứa trẻ, rồi lại gấp cho chồng tôi, ngu cư dự dàng đầy vẻ mãn gửi, chỉ dâu.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 43.0,
+    "end": 48.92,
+    "whisper_text": "Nhờ lúc em nhìn dương dương nhà em với anh minh viễn giống nhau quá, vừa rồi đi sự thiệu mọi người đều tưởng chúng em mới là một gia đình bà người.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 48.92,
+    "end": 59.84,
+    "whisper_text": "Ê, xem cái miệng em này, chỉ dâu đừng để bụng nhé, em chỉ là hơi vô tư thôi, tôi đặt đủ xuống, thân sắp biên thàn, lấy chi hoa xe ra, không để bụng, bây giờ đến biện, làm rất nhiệm quan hệ hết thống.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 59.84,
+    "end": 67.72,
+    "whisper_text": "Nếu là thật, tôi kiện tạm minh viễn tội kết hôn 2 lần, nếu là giả, tôi kiện cô tội vũ khống, con nữa, tạm minh viễn để tránh giới hiểu lầm như vậy làm lại.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 74.36,
+    "end": 80.36,
+    "whisper_text": "Khi tạm minh viễn dẫn hai mẹ con hứa thân giới về, tôi đang ngồi bên cửa sổ xa đất trong phòng khác, chăm chú xem bao cáo tài chính quy này.",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 131.2,
+    "end": 133.52,
+    "score": 70.1,
+    "chars_per_sec": 11.21,
+    "whisper_text": "Hàng xong với nhau, dúc đó là chuyện nên làm.",
+    "matched_text": "giúp đỡ là chuyện nên làm."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 146.4,
+    "end": 157.76,
+    "whisper_text": "Rộng khôngquest giá động, bài ra, tạ Minh viễn, tôi gì ứng với chi tiền trong nhà từ trước đến nay không ăn tôm hùng. Suo tôm anh mua, nếu là để đ大 khác, thì sử lĩ sạc ở khu bếp rau, đừng để chất là giữ xuất hiện trong phòng an.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 157.76,
+    "end": 163.84,
+    "whisper_text": "Chú thích chi tiền là thành phần triển tạo nên đổi cứng và gấu chú châu vọ tôn, không khí trong phòng chút lát cho nên ngọt nặng để.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 163.84,
+    "end": 167.68,
+    "whisper_text": "Lúc kuy tranh mà thưa thay nhé ở lại rồi những chiếm giống đổi sáng vệ ở đối đáng thơm.",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 172.28,
+    "end": 175.36,
+    "score": 56.8,
+    "chars_per_sec": 16.23,
+    "whisper_text": "Dân dân, hay là chúng ta về thôi, đừng làm cô không vui.",
+    "matched_text": "về liền bật lại phản ứng, hoàn toàn không hiểu sắc"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 179.2,
+    "end": 182.8,
+    "whisper_text": "Nó lập tức nằm lan ra sản, lan lộn ngay trên tấm thảm bà tư thủ công đá tiền.",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 182.8,
+    "end": 185.84,
+    "score": 49.2,
+    "chars_per_sec": 12.17,
+    "whisper_text": "Vừa quý vừa là, con không đi, con muốn ăn tôn hùng.",
+    "matched_text": "nằm lăn ra sàn, lăn lộn ngay trên tấm"
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 203.68,
+    "end": 206.8,
+    "score": 57.6,
+    "chars_per_sec": 23.08,
+    "whisper_text": "Anh là chúng nhà, chẳng đã anh ngay cả việc giữ khách cũng không có quyền sau.",
+    "matched_text": "rồi thì ở lại, vãn vãn chỉ là làm việc mệt nên nói chuyện thẳng thắn một"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 206.8,
+    "end": 211.84,
+    "whisper_text": "Nói xong, anh ta quay xong tôi, trong giọng nói đã lộn dạy chết móc, vãn phán, em cũng thật là.",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 216.56,
+    "end": 219.64,
+    "score": 60.9,
+    "chars_per_sec": 24.35,
+    "whisper_text": "Nhất thiết cứu phải làm họ sự mọi người trước mặt đứa trẻ như vậy sao.",
+    "matched_text": "trên thảm rồi chuyển ánh mắt sang gương mặt mang vẻ ra trưởng hiếm thấy của"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 233.8,
+    "end": 237.24,
+    "whisper_text": "Tạm bên viễn phận lại, môi mất máy, nhé, không nói ra được câu nào.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 240.84,
+    "end": 244.52,
+    "whisper_text": "Tạm bên viễn đào tạp gì, đi gia đi vào trong biếp, động tác cực kỳ bệnh dụng.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 244.52,
+    "end": 247.24,
+    "whisper_text": "Con hứa thay nghi lại giống như đã quen thuộc với nơi này từ lâu.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 253.68,
+    "end": 256.72,
+    "whisper_text": "Chị dọng, chị đừng chỉ nguyên không như vậy, thử món này đi.",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 256.72,
+    "end": 261.36,
+    "score": 46.5,
+    "chars_per_sec": 14.44,
+    "whisper_text": "Hứa thay nghi mình cười, gấp một miếng sửa khó vào bả tồi, chính là món tạm bên viễn vừa làm xong.",
+    "matched_text": "là món Tạ Minh Viễn vừa làm xong.\" Giọng nói của cô ta mang theo sự"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 265.12,
+    "end": 270.64,
+    "whisper_text": "Tây nghề của anh mình viễn thật sự rất tốt, sau này ai lấy được anh ấy, ah không, xem em này lại nói nhằm rồi.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 274.88,
+    "end": 279.48,
+    "whisper_text": "Cô ta lại gấp một miếng thịt đốt cho dân dân, rồi quay xa nghiên tạm bên viễn vừa bương điễ tôn gùng ra.",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 285.44,
+    "end": 288.4,
+    "score": 77.9,
+    "chars_per_sec": 18.24,
+    "whisper_text": "Đôi mắt, hàng bay của dân dân có phải rất dòng anh tạng không?",
+    "matched_text": "đôi mắt hang mày của Dương Dương có phải rất giống anh"
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 288.4,
+    "end": 291.08,
+    "score": 79.6,
+    "chars_per_sec": 15.67,
+    "whisper_text": "Nhất là cái mỗi này, giống như được khắc từ cùng một khuôn vậy.",
+    "matched_text": "giống như được khác từ cùng một khuôn vậy."
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 291.08,
+    "end": 299.0,
+    "whisper_text": "Cô ta trả miệng, bật cười khé, ấm thanh lạnh, anh mắt lứa qua dữ tôi và tạm bên viễn mang theo ý vị khó nói, ai không biết còn tử chúng ta mới là một gia đình ba người.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 299.0,
+    "end": 304.92,
+    "whisper_text": "Ê già, chị dâu, chị đừng để bụng nhé, tôi chỉ nói đùa thôi, thang bé cũng hay vô tư gọi anh ấy là ba tạm mà.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 308.56,
+    "end": 314.64,
+    "whisper_text": "Anh ta theo phản xã nhìn tôi, cười vận gạo soa diệu, thang ý chỉ nói vua thôi, em xem em kia, sau lại nghiêm túc như vậy.",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 318.4,
+    "end": 323.04,
+    "whisper_text": "đồng tóc trận giải khiến bầu không khí càng thêm căng thẳng, chậm đến mức mục đủ người trên mặt tạm bên viễn dần tắt hẳn,",
+    "matched_text": ""
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 323.04,
+    "end": 327.76,
+    "whisper_text": "chậm đến mức hứa thêm nhé bắt đầu bắt anh, khế dịch người trên vĩ, không để bụng, tôi lâu sông tay,",
+    "matched_text": ""
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 327.76,
+    "end": 331.68,
+    "score": 81.5,
+    "chars_per_sec": 16.58,
+    "whisper_text": "nhanh khăn và thùng giác, rồi ngừng mắt nhìn hay người họ, anh nhìn bình tĩnh đến lạnh léo.",
+    "matched_text": "rồi ngẩng mắt nhìn hai người họ, ánh nhìn bình tĩnh đến lạnh lẽo."
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 331.68,
+    "end": 335.32,
+    "score": 69.6,
+    "chars_per_sec": 13.19,
+    "whisper_text": "Nếu cô hứa đã đưa ra giả thích này, mà tạm bên viễn anh cũng không lập tức phủ nhận,",
+    "matched_text": "mà Tạ Minh Viễn anh cũng không lập tức phủ nhận."
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 352.24,
+    "end": 355.56,
+    "score": 54.6,
+    "chars_per_sec": 23.19,
+    "whisper_text": "tội kết hôn 2 lần khu chỉ là vấn đề đạo đức, mà còn là tội hình sự.",
+    "matched_text": "ro về quyền thừa kế cổ phần của tập đoàn Giang thị. Tội kết hôn hai lần không"
+  },
+  {
+    "reason": "LOW_SCORE",
+    "start": 387.8,
+    "end": 392.56,
+    "score": 49.5,
+    "chars_per_sec": 15.34,
+    "whisper_text": "em thật sự chỉ lỡ biện thôi, em với anh tạo trong sạch, chỉ sao có thể làm một người khác như vậy.",
+    "matched_text": "thể làm nhục người khác như vậy?\" Dương Dương vẫn chỉ là một đứa trẻ thôi"
+  },
+  {
+    "reason": "STRUCTURE_FAIL",
+    "start": 394.6,
+    "end": 399.4,
+    "whisper_text": "Vừa khóc, cô ta vừa dùng anh mắt yêu ớt, bởi lực ấy nhìn về viễn thả minh viễn, như đang câu cửa.",
+    "matched_text": ""
+  }
+]
