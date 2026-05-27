@@ -6,8 +6,8 @@ import re
 # CONFIG
 # =========================
 
-INPUT_DIR = Path(r"data/align_input/whisper_sub")
-OUTPUT_DIR = Path(r"data/align_input/whisper_sub")
+INPUT_DIR = Path(r"data/input_audio")
+OUTPUT_DIR = Path(r"data/input_audio")
 
 COPY_MODE = False
 # True  = copy

@@ -16,29 +16,27 @@ AUDIO_FOLDER = Path("data/input_audio")
 
 JSONL_OUTPUT_PATH = Path("output/factory_output/factory_dataset_added.jsonl")
 
-
+SPLIT_DURATION_SECONDS = 1200 + 0.015
 # =========================
 # LOAD ALIGN MAP
 # =========================
 
 
+def normalize_name(path_or_name):
+    name = Path(path_or_name).stem
+    name = re.sub(r"_clean$", "", name)
+    return name
+
+
 def build_map(align_map_path):
-
-    with open(
-        align_map_path,
-        "r",
-        encoding="utf-8",
-    ) as f:
-
+    with open(align_map_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     result = {}
 
     for item in data["items"]:
-
-        youtube = Path(item["source_youtube_path"]).stem
-
-        result[youtube] = item["whisper_prefix"]
+        key = normalize_name(item["source_youtube_path"])
+        result[key] = item["whisper_prefix"]
 
     return result
 
@@ -48,25 +46,20 @@ def build_map(align_map_path):
 # =========================
 
 
-def extract_suffix(filename):
+def extract_suffix_from_global_start(row):
+    global_start = row.get("global_start")
 
-    filename = Path(filename).stem
+    if global_start is None:
+        return None
 
-    filename = re.sub(
-        r"_clean$",
-        "",
-        filename,
-    )
+    try:
+        global_start = float(global_start)
+    except ValueError:
+        return None
 
-    m = re.search(
-        r" - Copy \((\d+)\)$",
-        filename,
-    )
+    part_index = int(global_start // SPLIT_DURATION_SECONDS) + 1
 
-    if not m:
-        return "_1"
-
-    return f"_{m.group(1)}"
+    return f"_{part_index}"
 
 
 # =========================
@@ -109,14 +102,7 @@ def run():
             row = json.loads(line)
 
             source_json = row.get("source_json", "")
-
-            filename = Path(source_json).stem
-
-            filename = re.sub(
-                r"_clean$",
-                "",
-                filename,
-            )
+            filename = normalize_name(source_json)
             # debug
             if total <= 10:
                 print("\n=== JSONL SOURCE SAMPLE ===")
@@ -129,18 +115,21 @@ def run():
 
             if whisper_prefix is None:
                 missing += 1
-
                 row["audio_path"] = ""
+                row["audio_path_error"] = "MISSING_WHISPER_PREFIX"
 
             else:
+                suffix = extract_suffix_from_global_start(row)
 
-                suffix = extract_suffix(source_json)
+                if suffix is None:
+                    missing += 1
+                    row["audio_path"] = ""
+                    row["audio_path_error"] = "MISSING_GLOBAL_START"
 
-                audio_name = whisper_prefix + suffix + ".wav"
-
-                row["audio_path"] = str(AUDIO_FOLDER / audio_name)
-
-                updated += 1
+                else:
+                    audio_name = whisper_prefix + suffix + ".wav"
+                    row["audio_path"] = str(AUDIO_FOLDER / audio_name)
+                    updated += 1
 
             with open(
                 JSONL_OUTPUT_PATH,
